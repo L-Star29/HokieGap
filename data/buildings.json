@@ -1,0 +1,58 @@
+[
+  {
+    "id": "GOODWIN",
+    "name": "Goodwin Hall",
+    "lat": 37.23231294,
+    "lon": -80.42581866,
+    "source": "https://arcgis-central.gis.vt.edu/arcgis/rest/services/vtcampusmap/Buildings/FeatureServer/0/query",
+    "checkedAt": "2026-09-19T15:22:35.082584+00:00"
+  },
+  {
+    "id": "BFH",
+    "name": "Bishop-Favrao Hall",
+    "lat": 37.23004366,
+    "lon": -80.42552012,
+    "source": "https://arcgis-central.gis.vt.edu/arcgis/rest/services/vtcampusmap/Buildings/FeatureServer/0/query",
+    "checkedAt": "2026-09-19T15:22:35.082584+00:00"
+  },
+  {
+    "id": "NCB",
+    "name": "Classroom Building",
+    "lat": 37.22936464,
+    "lon": -80.42696174,
+    "source": "https://arcgis-central.gis.vt.edu/arcgis/rest/services/vtcampusmap/Buildings/FeatureServer/0/query",
+    "checkedAt": "2026-09-19T15:22:35.082584+00:00"
+  },
+  {
+    "id": "NEWMAN",
+    "name": "Newman Library",
+    "lat": 37.2287881,
+    "lon": -80.41916034,
+    "source": "https://arcgis-central.gis.vt.edu/arcgis/rest/services/vtcampusmap/Buildings/FeatureServer/0/query",
+    "checkedAt": "2026-09-19T15:22:35.082584+00:00"
+  },
+  {
+    "id": "HAN",
+    "name": "Hancock Hall",
+    "lat": 37.23025685,
+    "lon": -80.42426159,
+    "source": "https://arcgis-central.gis.vt.edu/arcgis/rest/services/vtcampusmap/Buildings/FeatureServer/0/query",
+    "checkedAt": "2026-09-19T15:22:35.082584+00:00"
+  },
+  {
+    "id": "COW",
+    "name": "Cowgill Hall",
+    "lat": 37.22992428,
+    "lon": -80.42474327,
+    "source": "https://arcgis-central.gis.vt.edu/arcgis/rest/services/vtcampusmap/Buildings/FeatureServer/0/query",
+    "checkedAt": "2026-09-19T15:22:35.082584+00:00"
+  },
+  {
+    "id": "DERR",
+    "name": "Derring Hall",
+    "lat": 37.229089,
+    "lon": -80.42559413,
+    "source": "https://arcgis-central.gis.vt.edu/arcgis/rest/services/vtcampusmap/Buildings/FeatureServer/0/query",
+    "checkedAt": "2026-09-19T15:22:35.082584+00:00"
+  }
+]

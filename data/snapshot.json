@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-09-19T15:22:35.082584+00:00",
+  "term": "202609",
+  "subjects": [
+    "ECE",
+    "ENGE",
+    "ME",
+    "AOE",
+    "CEE",
+    "CS",
+    "MATH",
+    "PHYS",
+    "STAT",
+    "BIOL",
+    "GEOS",
+    "CHEM",
+    "ARCH",
+    "BC"
+  ],
+  "failures": [],
+  "coverage": "Selected subjects only; missing classes and special events mean lower forecast confidence.",
+  "source": "https://selfservice.banner.vt.edu/ssb/HZSKVTSC.P_ProcRequest"
+}
