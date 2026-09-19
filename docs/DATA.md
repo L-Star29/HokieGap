@@ -8,16 +8,16 @@ Snapshot collected September 19, 2026. File-level timestamps are in buildings.js
 |---|---|---|
 | buildings.json | id, name, latitude, longitude, source, checkedAt | Curated copy of VT GIS; refresh when footprint changes |
 | spaces.json | id, buildingId, name, location, allowed intents, note, verification, source, hoursKey, historic | Curated source review plus optional field verification |
-| classes.json | CRN, course, buildingId, room, day codes, start/end minutes, section capacity, null enrollment | Public term timetable snapshot, 520 meetings from selected subjects |
+| classes.json | CRN, course, buildingId, room, day codes, start/end minutes, section capacity, null enrollment | Public term timetable snapshot, 573 meetings from selected subjects |
 | hours.json | source, checkedAt, exact ISO date -> library -> opening intervals in minutes | Dated VT LibCal snapshot; 91 dates, no guessed recurring hours |
 | timetable-rows.json | Raw public section table rows for 14 selected subjects | Intermediate audit data; app consumes normalized classes.json |
 | snapshot.json | term, subjects, timestamp, fetch failures, coverage warning | Produced during timetable collection |
 
-Classroom Building=NCB; Goodwin=GOODW in timetable, GOODWIN internally; Derring=DER/DERR; Cowgill=CO/COW; Hancock=HAN; Bishop-Favrao=BFH; Newman=LIBR/NEWMAN. Never treat scheduled classroom capacity as study-area seating capacity.
+Classroom Building=NCB; Goodwin=GOODW in timetable, GOODWIN internally; Derring=DER/DERR; Cowgill=CO/COW; Hancock=HAN; Bishop-Favrao=BFH; Hitt=HITT; Newman=LIBR/NEWMAN. Never treat scheduled classroom capacity as study-area seating capacity.
 
 Day codes: M Monday, T Tuesday, W Wednesday, R Thursday, F Friday, S Saturday, U Sunday. Times are campus-local Eastern time; numeric times are minutes since midnight. The user-selected schedule stays in browser memory only.
 
-Timetable source: https://selfservice.banner.vt.edu/ssb/HZSKVTSC.P_ProcRequest (POST term 202609, campus 0, subject). Public section capacity is available; enrollment requires authenticated access and is not collected. The 14 subjects are ECE, ENGE, ME, AOE, CEE, CS, MATH, PHYS, STAT, BIOL, GEOS, CHEM, ARCH, BC. Missing subjects, continuation meetings, events and cancellations reduce confidence. 4,414 raw primary section rows yielded 520 qualifying meetings in the selected buildings. These are not all-campus attendance data.
+Timetable source: https://selfservice.banner.vt.edu/ssb/HZSKVTSC.P_ProcRequest (POST term 202609, campus 0, subject). Public section capacity is available; enrollment requires authenticated access and is not collected. The 14 subjects are ECE, ENGE, ME, AOE, CEE, CS, MATH, PHYS, STAT, BIOL, GEOS, CHEM, ARCH, BC. Missing subjects, continuation meetings, events and cancellations reduce confidence. 4,414 raw primary section rows yielded 573 qualifying meetings in the selected buildings. These are not all-campus attendance data.
 
 GIS: https://arcgis-central.gis.vt.edu/arcgis/rest/services/vtcampusmap/Buildings/FeatureServer/0/query
 
@@ -31,6 +31,8 @@ Hours: https://lib.vt.edu/about-us/hours.html and its public calendar https://ap
 - Hancock atrium: https://bov.vt.edu/assets/Attachment%20C_Report%20of%20the%20Information%20Session_Aug%202018.pdf — historical tables/outlets description. Current arrangement unverified; ranking penalty applied.
 - Derring overhang: https://neuroscience.vt.edu/latest-news/welcome-students.html — historical 2020 outdoor study-furniture reference. Weather and current setup unverified; ranking penalty applied.
 - Newman: https://lib.vt.edu/study-learn/study-spaces.html — quiet floors 3/5, group floors 2/4. Open seating, no room reservation implied.
+- Hitt Hall: https://www.facilities.vt.edu/design-construction/capital-construction/campus-construction-projects/HITTHall.html — official description of open collaboration zones and a 600-seat dining facility. Exact collaboration-zone access hours remain unverified.
+- Perry Place: https://dining.vt.edu/dining_centers/perryplace.html — official description of nine dining venues. Live venue hours and menus are not imported.
 
 ## Dynamic observations
 

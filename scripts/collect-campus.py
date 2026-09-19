@@ -9,7 +9,7 @@ OUT=ROOT/'data'; OUT.mkdir(exist_ok=True)
 STAMP=datetime.datetime.now(datetime.timezone.utc).isoformat()
 GIS='https://arcgis-central.gis.vt.edu/arcgis/rest/services/vtcampusmap/Buildings/FeatureServer/0/query'
 TIMETABLE='https://selfservice.banner.vt.edu/ssb/HZSKVTSC.P_ProcRequest'
-NAMES={'Classroom Building':'NCB','Goodwin Hall':'GOODWIN','Derring Hall':'DERR','Bishop-Favrao Hall':'BFH','Cowgill Hall':'COW','Hancock Hall':'HAN','Newman Library':'NEWMAN'}
+NAMES={'Classroom Building':'NCB','Goodwin Hall':'GOODWIN','Derring Hall':'DERR','Bishop-Favrao Hall':'BFH','Cowgill Hall':'COW','Hancock Hall':'HAN','Newman Library':'NEWMAN','Hitt Hall':'HITT'}
 class Rows(HTMLParser):
     def __init__(self): super().__init__(); self.rows=[]; self.row=[]; self.cell=None
     def handle_starttag(self,tag,attrs):
@@ -25,7 +25,7 @@ class Rows(HTMLParser):
             self.row.append(re.sub(r'\s+',' ',' '.join(self.cell)).strip()); self.cell=None
         if tag=='tr' and self.row: self.rows.append(self.row); self.row=[]
 def fetch(url,data=None):
-    return urllib.request.urlopen(urllib.request.Request(url,data=data,headers={'User-Agent':'HokieGap academic prototype'}),timeout=30).read().decode()
+    return urllib.request.urlopen(urllib.request.Request(url,data=data,headers={'User-Agent':'HokieGap campus planning service'}),timeout=30).read().decode()
 q=urllib.parse.urlencode({'where':'1=1','outFields':'name,latitude,longitude','returnGeometry':'false','f':'json'})
 records=json.loads(fetch(GIS+'?'+q))['features']
 buildings=[dict(id=NAMES[a['name']],name=a['name'],lat=a['latitude'],lon=a['longitude'],source=GIS,checkedAt=STAMP) for f in records for a in [f['attributes']] if a.get('name') in NAMES]

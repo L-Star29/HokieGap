@@ -4,20 +4,21 @@ A working Virginia Tech gap planner: find a study or break space between two cla
 
 ## What works
 
-- Seven buildings: Classroom Building, Goodwin, Derring, Cowgill, Hancock, Bishop-Favrao and Newman Library.
-- Seven candidate spaces across six of those buildings. Bishop-Favrao is a route endpoint only until a study space is verified.
+- Eight buildings: Classroom Building, Goodwin, Derring, Cowgill, Hancock, Bishop-Favrao, Hitt Hall and Newman Library.
+- Nine destinations, including Hitt Hall collaboration zones and Perry Place for dining. Bishop-Favrao is a route endpoint until a public study space is verified.
 - Same-day planning with walking limits, activity, arrival buffer, published library hours, estimated walking time, and at least 15 usable minutes.
-- Class-change demand heuristic using actual Fall 2026 public timetable rows. Arrival and later surges during the visit influence ranking.
+- Class-change demand model using actual Fall 2026 public timetable rows. Arrival and later surges during the visit influence ranking.
+- Google Maps handoff for the complete walking route: current building, selected destination and next-class building.
 - Shared seating reports in Cloudflare D1. No seeded production reports. Reports expire from recommendation use after 15 minutes, use server timestamps, and are limited to one per browser session per minute.
 - WebMCP `configure_gap_plan` updates the same interface and rejects invalid input.
 
 ## Important limits
 
-This is an unvalidated prototype, not a trained ML model, occupancy sensor, seat reservation system, official VT app or guaranteed navigation system. Campus data are snapshots, not live building queries. Class capacity is not enrollment or actual attendance. There is no reliable seat capacity dataset. Exact room-level paths, current access to common spaces, outlets, furniture and present-day noise need on-site verification.
+HokieGap's current demand model is not yet a trained ML model, occupancy sensor or seat reservation system. Campus data are snapshots, not live building queries. Class capacity is not enrollment or actual attendance. There is no reliable seat-capacity dataset. Exact room-level paths, current access to common spaces, outlets, furniture and present-day noise need on-site verification.
 
 The forecast window is deliberately limited to Sept 19–25, 2026. Extending it requires checking the academic calendar, actual class meeting dates, cancellations and updated timetables. Forecasts do not run outside this window. Saturday/Sunday are interpreted using the published meeting-day codes. This is partial coverage of 14 subjects, not every class or event on campus. Timetable continuation rows are not yet imported. Shared room/time rows are conservatively deduplicated by maximum listed capacity.
 
-Gemini, Databricks and HokieAI are **not connected**. Logging into those services does not supply this app with API access. Do not claim sponsor integration or eligibility based on this prototype. Track requirements still need to be checked against the opening slides and current sponsor instructions. No API keys are needed for this baseline app.
+Gemini, Databricks and HokieAI are **not connected**. Logging into those services does not supply this app with API access. Do not claim sponsor integration or eligibility before those integrations are implemented and the current track requirements are rechecked. No API keys are needed for the core app.
 
 The initial hosted audience is private. Additional student/judge access requires an explicit audience change. Anonymous report rate limiting is basic, not fraud-proof. A public launch needs abuse controls and report-quality evaluation. No personal schedules are saved or sent to a model. A random browser session identifier is stored with reports but never returned publicly. Old observations are cleaned up on subsequent writes after seven days; there is no background retention job.
 

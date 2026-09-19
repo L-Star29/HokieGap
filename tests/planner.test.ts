@@ -5,7 +5,8 @@ import {recommend,forecast,freshReports,minutes,type Data,type Plan} from '../li
 const json=(name:string)=>JSON.parse(readFileSync(new URL(`../data/${name}.json`,import.meta.url),'utf8'));
 const data:Data={buildings:json('buildings'),spaces:json('spaces'),classes:json('classes'),hours:json('hours')};
 const plan:Plan={from:'NCB',to:'DERR',date:'2026-09-21',start:'09:55',end:'11:15',intent:'study',maxWalk:20,buffer:5,confirmedOnly:false};
-test('real ECE section and seven building snapshot',()=>{assert.equal(data.buildings.length,7);assert.ok(data.classes.some(c=>c.crn==='84087'&&c.room==='NCB 260'&&c.end===595&&c.capacity===152));});
+test('real ECE section and engineering-cluster building snapshot',()=>{assert.equal(data.buildings.length,8);assert.ok(data.buildings.some(b=>b.id==='HITT'));assert.ok(data.classes.some(c=>c.crn==='84087'&&c.room==='NCB 260'&&c.end===595&&c.capacity===152));});
+test('eating plans use verified dining destinations',()=>{const r=recommend({...plan,intent:'eat'},data);assert.ok(r.results.some(s=>s.id==='perry-place'));assert.ok(r.results.every(s=>s.intents.includes('eat')));});
 test('every option fits both walking legs, arrival buffer and usable time',()=>{const r=recommend(plan,data);assert.ok(r.results.length>3);for(const s of r.results){assert.ok(s.leave+s.walkOut+plan.buffer<=minutes(plan.end));assert.equal(s.usable,s.leave-s.arrival);assert.ok(s.usable>=15);assert.ok(s.walkIn<=20&&s.walkOut<=20);}});
 test('known closed libraries excluded; unknown hours excluded by strict filter',()=>{const p={...plan,date:'2026-09-19',confirmedOnly:true};const r=recommend(p,data);assert.ok(r.results.length);assert.ok(r.results.every(s=>s.hoursKey==='newman'&&s.open));});
 test('closing time truncates usable time',()=>{const r=recommend({...plan,from:'COW',to:'COW',start:'20:30',end:'22:00',confirmedOnly:true},data);const s=r.results.find(s=>s.id==='cowgill-library');assert.ok(s);assert.equal(s.leave,1260);});

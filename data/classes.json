@@ -1,5 +1,16 @@
 [
   {
+    "crn": "84085",
+    "course": "ECE-1004",
+    "buildingId": "HITT",
+    "room": "HITT 338",
+    "days": "MWF",
+    "start": 480,
+    "end": 530,
+    "capacity": 144,
+    "enrollment": null
+  },
+  {
     "crn": "84086",
     "course": "ECE-1004",
     "buildingId": "NCB",
@@ -41,6 +52,17 @@
     "start": 480,
     "end": 530,
     "capacity": 130,
+    "enrollment": null
+  },
+  {
+    "crn": "84091",
+    "course": "ECE-2024",
+    "buildingId": "HITT",
+    "room": "HITT 338",
+    "days": "MWF",
+    "start": 545,
+    "end": 595,
+    "capacity": 110,
     "enrollment": null
   },
   {
@@ -858,6 +880,17 @@
     "enrollment": null
   },
   {
+    "crn": "92078",
+    "course": "ME-3414",
+    "buildingId": "HITT",
+    "room": "HITT 338",
+    "days": "TR",
+    "start": 930,
+    "end": 1005,
+    "capacity": 78,
+    "enrollment": null
+  },
+  {
     "crn": "87777",
     "course": "ME-3524",
     "buildingId": "NCB",
@@ -1540,6 +1573,17 @@
     "enrollment": null
   },
   {
+    "crn": "80478",
+    "course": "AOE-3154",
+    "buildingId": "HITT",
+    "room": "HITT 338",
+    "days": "MWF",
+    "start": 675,
+    "end": 725,
+    "capacity": 130,
+    "enrollment": null
+  },
+  {
     "crn": "80487",
     "course": "AOE-4065",
     "buildingId": "NCB",
@@ -1749,6 +1793,17 @@
     "enrollment": null
   },
   {
+    "crn": "80517",
+    "course": "AOE-4814",
+    "buildingId": "HITT",
+    "room": "HITT 340",
+    "days": "MWF",
+    "start": 805,
+    "end": 855,
+    "capacity": 65,
+    "enrollment": null
+  },
+  {
     "crn": "80593",
     "course": "AOE-5204",
     "buildingId": "NCB",
@@ -1892,6 +1947,17 @@
     "enrollment": null
   },
   {
+    "crn": "82459",
+    "course": "CEE-2834",
+    "buildingId": "HITT",
+    "room": "HITT 340",
+    "days": "TR",
+    "start": 660,
+    "end": 735,
+    "capacity": 100,
+    "enrollment": null
+  },
+  {
     "crn": "91560",
     "course": "CEE-3014",
     "buildingId": "NCB",
@@ -2002,6 +2068,17 @@
     "enrollment": null
   },
   {
+    "crn": "82520",
+    "course": "CEE-4610",
+    "buildingId": "HITT",
+    "room": "HITT 340",
+    "days": "MWF",
+    "start": 610,
+    "end": 660,
+    "capacity": 75,
+    "enrollment": null
+  },
+  {
     "crn": "82525",
     "course": "CEE-4804",
     "buildingId": "NCB",
@@ -2046,6 +2123,17 @@
     "enrollment": null
   },
   {
+    "crn": "82572",
+    "course": "CEE-5610",
+    "buildingId": "HITT",
+    "room": "HITT 340",
+    "days": "MWF",
+    "start": 610,
+    "end": 660,
+    "capacity": 20,
+    "enrollment": null
+  },
+  {
     "crn": "82636",
     "course": "CEE-5944",
     "buildingId": "GOODWIN",
@@ -2065,6 +2153,17 @@
     "start": 960,
     "end": 1035,
     "capacity": 225,
+    "enrollment": null
+  },
+  {
+    "crn": "91556",
+    "course": "CS-1064",
+    "buildingId": "HITT",
+    "room": "HITT 338",
+    "days": "TR",
+    "start": 840,
+    "end": 915,
+    "capacity": 144,
     "enrollment": null
   },
   {
@@ -2233,6 +2332,17 @@
     "enrollment": null
   },
   {
+    "crn": "83579",
+    "course": "CS-3634",
+    "buildingId": "HITT",
+    "room": "HITT 335",
+    "days": "MW",
+    "start": 960,
+    "end": 1035,
+    "capacity": 50,
+    "enrollment": null
+  },
+  {
     "crn": "83580",
     "course": "CS-3634",
     "buildingId": "NCB",
@@ -2241,6 +2351,17 @@
     "start": 870,
     "end": 945,
     "capacity": 50,
+    "enrollment": null
+  },
+  {
+    "crn": "83585",
+    "course": "CS-3704",
+    "buildingId": "HITT",
+    "room": "HITT 340",
+    "days": "TR",
+    "start": 570,
+    "end": 645,
+    "capacity": 100,
     "enrollment": null
   },
   {
@@ -2273,6 +2394,17 @@
     "days": "MW",
     "start": 1050,
     "end": 1125,
+    "capacity": 70,
+    "enrollment": null
+  },
+  {
+    "crn": "83604",
+    "course": "CS-4104",
+    "buildingId": "HITT",
+    "room": "HITT 340",
+    "days": "TR",
+    "start": 750,
+    "end": 825,
     "capacity": 70,
     "enrollment": null
   },
@@ -2365,6 +2497,17 @@
     "enrollment": null
   },
   {
+    "crn": "87436",
+    "course": "MATH-1026",
+    "buildingId": "HITT",
+    "room": "HITT 338",
+    "days": "MWF",
+    "start": 610,
+    "end": 660,
+    "capacity": 144,
+    "enrollment": null
+  },
+  {
     "crn": "87445",
     "course": "MATH-1214",
     "buildingId": "DERR",
@@ -2420,6 +2563,17 @@
     "enrollment": null
   },
   {
+    "crn": "87546",
+    "course": "MATH-1535",
+    "buildingId": "HITT",
+    "room": "HITT 338",
+    "days": "MW",
+    "start": 960,
+    "end": 1035,
+    "capacity": 60,
+    "enrollment": null
+  },
+  {
     "crn": "92318",
     "course": "MATH-2114",
     "buildingId": "HAN",
@@ -2450,6 +2604,17 @@
     "start": 610,
     "end": 660,
     "capacity": 40,
+    "enrollment": null
+  },
+  {
+    "crn": "87653",
+    "course": "MATH-2534",
+    "buildingId": "HITT",
+    "room": "HITT 340",
+    "days": "MW",
+    "start": 870,
+    "end": 945,
+    "capacity": 60,
     "enrollment": null
   },
   {
@@ -2530,6 +2695,28 @@
     "enrollment": null
   },
   {
+    "crn": "89503",
+    "course": "PHYS-2325",
+    "buildingId": "HITT",
+    "room": "HITT 340",
+    "days": "T",
+    "start": 840,
+    "end": 915,
+    "capacity": 0,
+    "enrollment": null
+  },
+  {
+    "crn": "89504",
+    "course": "PHYS-2325",
+    "buildingId": "HITT",
+    "room": "HITT 340",
+    "days": "T",
+    "start": 840,
+    "end": 915,
+    "capacity": 0,
+    "enrollment": null
+  },
+  {
     "crn": "89540",
     "course": "PHYS-3355",
     "buildingId": "NCB",
@@ -2563,6 +2750,28 @@
     "enrollment": null
   },
   {
+    "crn": "90428",
+    "course": "STAT-3616",
+    "buildingId": "HITT",
+    "room": "HITT 338",
+    "days": "MW",
+    "start": 870,
+    "end": 945,
+    "capacity": 80,
+    "enrollment": null
+  },
+  {
+    "crn": "90446",
+    "course": "STAT-4604",
+    "buildingId": "HITT",
+    "room": "HITT 338",
+    "days": "MWF",
+    "start": 740,
+    "end": 790,
+    "capacity": 130,
+    "enrollment": null
+  },
+  {
     "crn": "90448",
     "course": "STAT-4654",
     "buildingId": "NCB",
@@ -2571,6 +2780,28 @@
     "start": 750,
     "end": 825,
     "capacity": 65,
+    "enrollment": null
+  },
+  {
+    "crn": "91861",
+    "course": "STAT-4705",
+    "buildingId": "HITT",
+    "room": "HITT 340",
+    "days": "MWF",
+    "start": 675,
+    "end": 725,
+    "capacity": 100,
+    "enrollment": null
+  },
+  {
+    "crn": "90453",
+    "course": "STAT-4714",
+    "buildingId": "HITT",
+    "room": "HITT 340",
+    "days": "MWF",
+    "start": 740,
+    "end": 790,
+    "capacity": 100,
     "enrollment": null
   },
   {
@@ -3762,6 +3993,17 @@
     "enrollment": null
   },
   {
+    "crn": "81840",
+    "course": "BIOL-2804",
+    "buildingId": "HITT",
+    "room": "HITT 340",
+    "days": "TR",
+    "start": 480,
+    "end": 555,
+    "capacity": 95,
+    "enrollment": null
+  },
+  {
     "crn": "81928",
     "course": "BIOL-3774",
     "buildingId": "NCB",
@@ -4730,6 +4972,17 @@
     "enrollment": null
   },
   {
+    "crn": "81098",
+    "course": "ARCH-3065",
+    "buildingId": "HITT",
+    "room": "HITT 338",
+    "days": "TR",
+    "start": 570,
+    "end": 645,
+    "capacity": 130,
+    "enrollment": null
+  },
+  {
     "crn": "81099",
     "course": "ARCH-3116",
     "buildingId": "HAN",
@@ -5566,6 +5819,28 @@
     "enrollment": null
   },
   {
+    "crn": "81524",
+    "course": "BC-1014",
+    "buildingId": "HITT",
+    "room": "HITT 100",
+    "days": "MW",
+    "start": 545,
+    "end": 595,
+    "capacity": 43,
+    "enrollment": null
+  },
+  {
+    "crn": "81525",
+    "course": "BC-1014",
+    "buildingId": "HITT",
+    "room": "HITT 100",
+    "days": "MW",
+    "start": 610,
+    "end": 660,
+    "capacity": 43,
+    "enrollment": null
+  },
+  {
     "crn": "81526",
     "course": "BC-1114",
     "buildingId": "BFH",
@@ -5588,6 +5863,94 @@
     "enrollment": null
   },
   {
+    "crn": "92718",
+    "course": "BC-1114",
+    "buildingId": "HITT",
+    "room": "HITT 300A",
+    "days": "TR",
+    "start": 660,
+    "end": 735,
+    "capacity": 40,
+    "enrollment": null
+  },
+  {
+    "crn": "81528",
+    "course": "BC-2004",
+    "buildingId": "HITT",
+    "room": "HITT 100",
+    "days": "W",
+    "start": 870,
+    "end": 1035,
+    "capacity": 30,
+    "enrollment": null
+  },
+  {
+    "crn": "91991",
+    "course": "BC-2004",
+    "buildingId": "HITT",
+    "room": "HITT 100",
+    "days": "M",
+    "start": 870,
+    "end": 1035,
+    "capacity": 30,
+    "enrollment": null
+  },
+  {
+    "crn": "91992",
+    "course": "BC-2004",
+    "buildingId": "HITT",
+    "room": "HITT 300C",
+    "days": "R",
+    "start": 840,
+    "end": 1005,
+    "capacity": 30,
+    "enrollment": null
+  },
+  {
+    "crn": "81529",
+    "course": "BC-2014",
+    "buildingId": "HITT",
+    "room": "HITT 100",
+    "days": "TR",
+    "start": 570,
+    "end": 645,
+    "capacity": 50,
+    "enrollment": null
+  },
+  {
+    "crn": "81530",
+    "course": "BC-2014",
+    "buildingId": "HITT",
+    "room": "HITT 100",
+    "days": "TR",
+    "start": 750,
+    "end": 825,
+    "capacity": 52,
+    "enrollment": null
+  },
+  {
+    "crn": "81531",
+    "course": "BC-2014",
+    "buildingId": "HITT",
+    "room": "HITT 100",
+    "days": "TR",
+    "start": 840,
+    "end": 915,
+    "capacity": 50,
+    "enrollment": null
+  },
+  {
+    "crn": "81532",
+    "course": "BC-2024",
+    "buildingId": "HITT",
+    "room": "HITT 100",
+    "days": "TR",
+    "start": 930,
+    "end": 1005,
+    "capacity": 60,
+    "enrollment": null
+  },
+  {
     "crn": "81533",
     "course": "BC-2044",
     "buildingId": "BFH",
@@ -5606,6 +5969,50 @@
     "days": "MW",
     "start": 960,
     "end": 1035,
+    "capacity": 40,
+    "enrollment": null
+  },
+  {
+    "crn": "81535",
+    "course": "BC-2064",
+    "buildingId": "HITT",
+    "room": "HITT 100",
+    "days": "W",
+    "start": 675,
+    "end": 725,
+    "capacity": 35,
+    "enrollment": null
+  },
+  {
+    "crn": "81536",
+    "course": "BC-2064",
+    "buildingId": "HITT",
+    "room": "HITT 300C",
+    "days": "F",
+    "start": 610,
+    "end": 725,
+    "capacity": 35,
+    "enrollment": null
+  },
+  {
+    "crn": "81537",
+    "course": "BC-2104",
+    "buildingId": "HITT",
+    "room": "HITT 300B",
+    "days": "TR",
+    "start": 570,
+    "end": 645,
+    "capacity": 40,
+    "enrollment": null
+  },
+  {
+    "crn": "91994",
+    "course": "BC-2104",
+    "buildingId": "HITT",
+    "room": "HITT 300B",
+    "days": "TR",
+    "start": 750,
+    "end": 825,
     "capacity": 40,
     "enrollment": null
   },
@@ -5643,11 +6050,88 @@
     "enrollment": null
   },
   {
+    "crn": "91993",
+    "course": "BC-2114",
+    "buildingId": "HITT",
+    "room": "HITT 100",
+    "days": "TR",
+    "start": 480,
+    "end": 555,
+    "capacity": 45,
+    "enrollment": null
+  },
+  {
+    "crn": "81542",
+    "course": "BC-2214",
+    "buildingId": "HITT",
+    "room": "HITT 100",
+    "days": "MWF",
+    "start": 480,
+    "end": 530,
+    "capacity": 80,
+    "enrollment": null
+  },
+  {
+    "crn": "81543",
+    "course": "BC-3064",
+    "buildingId": "HITT",
+    "room": "HITT 300C",
+    "days": "M",
+    "start": 740,
+    "end": 855,
+    "capacity": 46,
+    "enrollment": null
+  },
+  {
+    "crn": "81544",
+    "course": "BC-3064",
+    "buildingId": "HITT",
+    "room": "HITT 300C",
+    "days": "W",
+    "start": 805,
+    "end": 855,
+    "capacity": 47,
+    "enrollment": null
+  },
+  {
+    "crn": "81545",
+    "course": "BC-3064",
+    "buildingId": "HITT",
+    "room": "HITT 300A",
+    "days": "W",
+    "start": 675,
+    "end": 790,
+    "capacity": 46,
+    "enrollment": null
+  },
+  {
+    "crn": "81546",
+    "course": "BC-3114",
+    "buildingId": "HITT",
+    "room": "HITT 300B",
+    "days": "WF",
+    "start": 545,
+    "end": 595,
+    "capacity": 50,
+    "enrollment": null
+  },
+  {
     "crn": "81547",
     "course": "BC-3114",
     "buildingId": "BFH",
     "room": "BFH 210",
     "days": "MW",
+    "start": 545,
+    "end": 595,
+    "capacity": 50,
+    "enrollment": null
+  },
+  {
+    "crn": "81548",
+    "course": "BC-3114",
+    "buildingId": "HITT",
+    "room": "HITT 300B",
+    "days": "WF",
     "start": 545,
     "end": 595,
     "capacity": 50,
@@ -5687,6 +6171,61 @@
     "enrollment": null
   },
   {
+    "crn": "81553",
+    "course": "BC-4064",
+    "buildingId": "HITT",
+    "room": "HITT 300B",
+    "days": "M",
+    "start": 675,
+    "end": 725,
+    "capacity": 45,
+    "enrollment": null
+  },
+  {
+    "crn": "81554",
+    "course": "BC-4064",
+    "buildingId": "HITT",
+    "room": "HITT 300A",
+    "days": "F",
+    "start": 610,
+    "end": 725,
+    "capacity": 45,
+    "enrollment": null
+  },
+  {
+    "crn": "81555",
+    "course": "BC-4064",
+    "buildingId": "HITT",
+    "room": "HITT 300A",
+    "days": "M",
+    "start": 675,
+    "end": 725,
+    "capacity": 45,
+    "enrollment": null
+  },
+  {
+    "crn": "81556",
+    "course": "BC-4164",
+    "buildingId": "HITT",
+    "room": "HITT 300A",
+    "days": "MW",
+    "start": 1050,
+    "end": 1125,
+    "capacity": 45,
+    "enrollment": null
+  },
+  {
+    "crn": "91995",
+    "course": "BC-4164",
+    "buildingId": "HITT",
+    "room": "HITT 300A",
+    "days": "MW",
+    "start": 960,
+    "end": 1035,
+    "capacity": 40,
+    "enrollment": null
+  },
+  {
     "crn": "81559",
     "course": "BC-4434",
     "buildingId": "BFH",
@@ -5695,6 +6234,28 @@
     "start": 840,
     "end": 915,
     "capacity": 45,
+    "enrollment": null
+  },
+  {
+    "crn": "81560",
+    "course": "BC-4434",
+    "buildingId": "HITT",
+    "room": "HITT 100",
+    "days": "TR",
+    "start": 660,
+    "end": 735,
+    "capacity": 45,
+    "enrollment": null
+  },
+  {
+    "crn": "81561",
+    "course": "BC-4444",
+    "buildingId": "HITT",
+    "room": "HITT 300C",
+    "days": "TR",
+    "start": 570,
+    "end": 645,
+    "capacity": 48,
     "enrollment": null
   },
   {
@@ -5717,6 +6278,28 @@
     "start": 610,
     "end": 725,
     "capacity": 10,
+    "enrollment": null
+  },
+  {
+    "crn": "81579",
+    "course": "BC-5514",
+    "buildingId": "HITT",
+    "room": "HITT 100",
+    "days": "TR",
+    "start": 570,
+    "end": 645,
+    "capacity": 6,
+    "enrollment": null
+  },
+  {
+    "crn": "81580",
+    "course": "BC-5524",
+    "buildingId": "HITT",
+    "room": "HITT 100",
+    "days": "TR",
+    "start": 930,
+    "end": 1005,
+    "capacity": 5,
     "enrollment": null
   }
 ]

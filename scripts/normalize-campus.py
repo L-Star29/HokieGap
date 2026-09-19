@@ -1,7 +1,7 @@
 import json,re,collections
 from pathlib import Path
 p=Path(__file__).resolve().parents[1]/'data'
-aliases={'NCB':'NCB','GOODW':'GOODWIN','DER':'DERR','CO':'COW','HAN':'HAN','BFH':'BFH','LIBR':'NEWMAN'}
+aliases={'NCB':'NCB','GOODW':'GOODWIN','DER':'DERR','CO':'COW','HAN':'HAN','BFH':'BFH','LIBR':'NEWMAN','HITT':'HITT'}
 def minute(s):
     m=re.fullmatch(r'(\d{1,2}):(\d{2})(AM|PM)',s)
     if not m:return None
