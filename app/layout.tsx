@@ -4,9 +4,6 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "HokieGap — Find your next good hour",
   description: "Find study and break spaces between Virginia Tech classes.",
-  other: {
-    "codex-preview": "development",
-  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
