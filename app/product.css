@@ -34,3 +34,21 @@
 .map-link:hover {
   background: #6f1936;
 }
+
+.ai-planner{padding:20px;border:1px solid #dce0d5;border-radius:10px;background:white;margin-bottom:24px;display:grid;gap:10px;max-width:950px}
+.ai-planner>button{justify-self:start;background:#861f41;color:white}
+.ai-planner p{color:#59634e}.ai-planner ol{padding-left:20px}
+.preferences{margin-top:12px;font-size:14px;grid-column:1/-1}
+.preferences summary{font-weight:600;cursor:pointer;margin-bottom:10px}
+.preferences label,.preferences .two-fields{margin:10px 0}
+.text-button{background:none;border:0;color:#861f41;text-decoration:underline;font-size:13px;padding:10px 0}
+.notice{background:#fff3df;padding:10px;border-radius:6px;font-size:13px;margin-bottom:12px}
+.saved-gap{display:flex;justify-content:space-between;gap:10px;border-top:1px solid #d6dace;padding:8px 0}
+.saved-gap button{color:#861f41;text-align:left}.saved-gap button:last-child{font-size:12px}
+.card-actions{flex-wrap:wrap;gap:6px 14px}.card-actions button{font-size:12px}
+.card-kicker{flex-wrap:wrap;gap:5px}.card-bottom{flex-wrap:wrap}
+.metrics{flex-wrap:wrap;gap:12px}.metrics strong{font-size:26px}.metrics strong small{display:block;margin-top:4px}
+.backup{margin-bottom:16px}.backup p{margin:8px 0}.backup button{white-space:normal;height:auto;min-height:36px}
+.detail-panel{position:sticky;top:20px;max-height:calc(100vh - 40px);overflow-y:auto}
+@media(min-width:701px) and (max-width:1120px){.workspace{grid-template-columns:260px minmax(0,1fr)}.planner{grid-column:1;grid-row:1/3;position:static}.detail-panel{grid-column:2;grid-row:1;position:static;max-height:none}.results{grid-column:2;grid-row:2}}
+@media(max-width:700px){.workspace{display:flex}.planner{order:1}.detail-panel{order:2;position:static;max-height:none}.results{order:3}.preferences{width:100%}.card-actions button{min-height:42px}.map-link small{font-size:12px}}

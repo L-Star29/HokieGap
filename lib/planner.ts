@@ -9,7 +9,7 @@ export const clock=(n:number)=>`${Math.floor(n/60)%12||12}:${String(n%60).padSta
 export function eastern(now:number){const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(now);const p=Object.fromEntries(parts.map(x=>[x.type,x.value]));return {date:`${p.year}-${p.month}-${p.day}`,minute:+p.hour*60 + +p.minute};}
 export function distance(a:Building,b:Building){const rad=Math.PI/180;const x=(a.lon-b.lon)*rad*Math.cos((a.lat+b.lat)/2*rad),y=(a.lat-b.lat)*rad;return Math.sqrt(x*x+y*y)*6371000;}
 export function walk(a:Building,b:Building){return a.id===b.id?2:Math.ceil(distance(a,b)*1.35/70)+2;}
-export function validate(p:Plan,buildings:Building[]){if(!buildings.some(x=>x.id===p.from)||!buildings.some(x=>x.id===p.to))return 'Choose a current and next building.';if(!/^2026-\d{2}-\d{2}$/.test(p.date)||isNaN(Date.parse(p.date))||new Date(p.date).toISOString().slice(0,10)!==p.date)return 'Choose a valid date in 2026.';if(!Number.isFinite(minutes(p.start))||!Number.isFinite(minutes(p.end))||minutes(p.end)<=minutes(p.start))return 'End time must be later than start time on the same day.';if(!['study','quiet','group','break','eat'].includes(p.intent)||!Number.isInteger(p.maxWalk)||p.maxWalk<2||p.maxWalk>20||!Number.isInteger(p.buffer)||p.buffer<0||p.buffer>20)return 'Check the activity, walking limit and arrival buffer.';return null;}
+export function validate(p:Plan,buildings:Building[]){if(!buildings.some(x=>x.id===p.from)||!buildings.some(x=>x.id===p.to))return 'Choose a current and next building.';if(!/^\d{4}-\d{2}-\d{2}$/.test(p.date)||isNaN(Date.parse(p.date))||new Date(p.date).toISOString().slice(0,10)!==p.date)return 'Choose a valid date.';if(!Number.isFinite(minutes(p.start))||!Number.isFinite(minutes(p.end))||minutes(p.end)<=minutes(p.start))return 'End time must be later than start time on the same day.';if(!['study','quiet','group','break','eat'].includes(p.intent)||!Number.isInteger(p.maxWalk)||p.maxWalk<2||p.maxWalk>20||!Number.isInteger(p.buffer)||p.buffer<0||p.buffer>20)return 'Check the activity, walking limit and arrival buffer.';return null;}
 export function forecast(buildingId:string,date:string,time:number,data:Data){
  const available=date>='2026-09-19'&&date<='2026-09-25';
  if(!available)return {score:0,label:'Outside forecast window',events:[] as {course:string,end:number,capacity:number,room:string}[],available:false};
@@ -26,7 +26,7 @@ export function forecast(buildingId:string,date:string,time:number,data:Data){
   if(since>=0&&since<=25){score+=c.capacity*.08*proximity*(1-since/25);if(proximity===1)events.push({course:c.course,end:c.end,capacity:c.capacity,room:c.room});}
   if(until>0&&until<=10)score+=c.capacity*.025*proximity*(1-until/10);
  }
- return {score,label:score>=30?'Higher surge':score>=10?'Some surge':'Lower surge',events:events.sort((a,b)=>b.capacity-a.capacity).slice(0,3),available:true};
+ return {score,label:score>=30?'High':score>=10?'Moderate':'Low',events:events.sort((a,b)=>b.capacity-a.capacity).slice(0,3),available:true};
 }
 export function freshReports(reports:Report[],spaceId:string,now:number){return reports.filter(r=>r.spaceId===spaceId&&r.createdAt<=now&&now-r.createdAt<15*60000&&['plenty','few','none'].includes(r.level)).sort((a,b)=>b.createdAt-a.createdAt);}
 export function recommend(p:Plan,data:Data,reports:Report[]=[],now=Date.now()){

@@ -2,6 +2,8 @@
 
 A working Virginia Tech gap planner: find a study or break space between two classes, compare usable time and class-change pressure, select a backup, and report visible seating conditions.
 
+Start with [Team setup](docs/TEAM-START.md), [Sponsor setup](docs/SPONSOR-SETUP.md), and [Devpost draft](docs/DEVPOST-DRAFT.md).
+
 ## What works
 
 - Eight buildings: Classroom Building, Goodwin, Derring, Cowgill, Hancock, Bishop-Favrao, Hitt Hall and Newman Library.
@@ -18,9 +20,9 @@ HokieGap's current demand model is not yet a trained ML model, occupancy sensor 
 
 The forecast window is deliberately limited to Sept 19–25, 2026. Extending it requires checking the academic calendar, actual class meeting dates, cancellations and updated timetables. Forecasts do not run outside this window. Saturday/Sunday are interpreted using the published meeting-day codes. This is partial coverage of 14 subjects, not every class or event on campus. Timetable continuation rows are not yet imported. Shared room/time rows are conservatively deduplicated by maximum listed capacity.
 
-Gemini, Databricks and HokieAI are **not connected**. Logging into those services does not supply this app with API access. Do not claim sponsor integration or eligibility before those integrations are implemented and the current track requirements are rechecked. No API keys are needed for the core app.
+Gemini tool-calling is implemented and has passed a real API and browser smoke test with gemini-3.6-flash. The Databricks SQL integration and setup notebook are implemented but not yet verified in the team workspace. The HokieAI Side Kick prompt is prepared; it still needs creation/testing inside HokieAI and the required social post. See docs/SPONSOR-SETUP.md. No API keys are needed for the manual planner.
 
-The initial hosted audience is private. Additional student/judge access requires an explicit audience change. Anonymous report rate limiting is basic, not fraud-proof. A public launch needs abuse controls and report-quality evaluation. No personal schedules are saved or sent to a model. A random browser session identifier is stored with reports but never returned publicly. Old observations are cleaned up on subsequent writes after seven days; there is no background retention job.
+The owner approved public access to the hosted app. Anonymous report rate limiting is basic, not fraud-proof. A public launch needs abuse controls and report-quality evaluation. Preferences, favorite places, saved gaps and a current plan are stored on the device. When a student chooses Plan with AI, the request and selected gap details are sent to Gemini. A random browser session identifier is stored with reports but never returned publicly. Old observations are cleaned up on subsequent writes after seven days; there is no background retention job.
 
 ## Run and verify
 
@@ -28,8 +30,9 @@ Use Node 24 and npm. The included starter expects a portable profile outside man
 
 ```sh
 npm ci
+npm run db:local
 npm run dev
-node --test tests/planner.test.ts
+npm test
 npx tsc --noEmit
 npm run build
 ```
