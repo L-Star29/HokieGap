@@ -1,6 +1,6 @@
 # Copy to .dev.vars. Never commit the filled-in file.
 GEMINI_API_KEY=
-GEMINI_MODEL=gemini-3.6-flash
+GEMINI_MODEL=gemini-3.5-flash-lite
 DATABRICKS_HOST=https://dbc-31de3f1b-fd1c.cloud.databricks.com
 DATABRICKS_TOKEN=
 DATABRICKS_WAREHOUSE_ID=

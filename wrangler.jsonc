@@ -34,7 +34,9 @@
   // `.dev.vars` for local development.
   "vars": {
     "AGENT_ENABLED": "true",
-    "GEMINI_MODEL": "gemini-3.6-flash",
+    // Primary model. gemini-3.6-flash was returning 429 (quota) on 2026-09-20, so the lighter
+    // 3.5 Flash-Lite is primary; runAgent falls back to other Flash models on 429/5xx.
+    "GEMINI_MODEL": "gemini-3.5-flash-lite",
     "DATABRICKS_HOST": "https://dbc-31de3f1b-fd1c.cloud.databricks.com",
     "DATABRICKS_CATALOG": "workspace",
     "DATABRICKS_SCHEMA": "hokiegap",

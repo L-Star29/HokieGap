@@ -24,23 +24,36 @@ test('Databricks host must be an https *.cloud.databricks.com workspace',async()
  for(const host of ['https://evil.example.com','http://example.cloud.databricks.com','https://user:pw@example.cloud.databricks.com'])
   await assert.rejects(loadCampus({DATABRICKS_HOST:host,DATABRICKS_TOKEN:'t',DATABRICKS_WAREHOUSE_ID:'w'},data,fake as any),/Invalid Databricks workspace host/);
 });
-test('transient Gemini 503 is retried and then succeeds',async()=>{
- let count=0;
- const fake=async()=>{count++;if(count===1)return new Response('{}',{status:503});
-  return Response.json(count===2?{candidates:[{content:{role:'model',parts:[{functionCall:{name:'find_campus_options',args:{intent:'eat',maxWalk:8}}}]}}]}:{candidates:[{content:{parts:[{text:JSON.stringify({selectedId:'perry-place',explanation:'ok'})}]}}]});};
- const r=await runAgent('food',plan,data,[],{GEMINI_API_KEY:'test'},fake as any);
- assert.equal(r.selectedId,'perry-place');assert.equal(count,3);
-});
-test('overloaded primary model falls back to another plain Flash model the key can use',async()=>{
+const okModel=(m:string)=>({name:`models/${m}`,supportedGenerationMethods:['generateContent']});
+const toolCall={candidates:[{content:{role:'model',parts:[{functionCall:{name:'find_campus_options',args:{intent:'eat',maxWalk:8}}}]}}]};
+const finalAnswer={candidates:[{content:{parts:[{text:JSON.stringify({selectedId:'perry-place',explanation:'ok'})}]}}]};
+test('a 429 on the primary model is not retried; the next model is used immediately',async()=>{
  const seen:string[]=[];let n=0;
- const ok=(m:string)=>({name:`models/${m}`,supportedGenerationMethods:['generateContent']});
  const fake=async(url:any)=>{const u=String(url);seen.push(u);
-  if(u.includes('/models?'))return Response.json({models:[ok('gemini-3.6-flash'),ok('gemini-2.5-flash-image'),ok('gemini-2.5-pro'),ok('gemini-2.5-flash')]});
-  if(u.includes('gemini-3.6-flash:generateContent'))return new Response('{}',{status:503});
-  return Response.json(++n===1?{candidates:[{content:{role:'model',parts:[{functionCall:{name:'find_campus_options',args:{intent:'eat',maxWalk:8}}}]}}]}:{candidates:[{content:{parts:[{text:JSON.stringify({selectedId:'perry-place',explanation:'ok'})}]}}]});};
+  if(u.includes('/models?'))return Response.json({models:[okModel('gemini-3.6-flash'),okModel('gemini-2.5-flash-image'),okModel('gemini-2.5-pro'),okModel('gemini-2.5-flash')]});
+  if(u.includes('gemini-3.6-flash:generateContent'))return new Response('{}',{status:429});
+  return Response.json(++n===1?toolCall:finalAnswer);};
  const r=await runAgent('food',plan,data,[],{GEMINI_API_KEY:'test'},fake as any);
  assert.equal(r.model,'gemini-2.5-flash');
+ assert.equal(seen.filter(u=>u.includes('gemini-3.6-flash:generateContent')).length,1);
  assert.ok(seen.filter(u=>u.includes(':generateContent')).every(u=>/gemini-(3\.6|2\.5)-flash:generateContent/.test(u)));
+});
+test('fallback tries the closest older Flash model first, then newer ones',async()=>{
+ const order:string[]=[];
+ const fake=async(url:any)=>{const u=String(url);
+  if(u.includes('/models?'))return Response.json({models:['gemini-3.8-flash','gemini-3.7-flash','gemini-3.6-flash','gemini-3.5-flash-lite','gemini-3.5-flash','gemini-2.5-flash'].map(okModel)});
+  order.push(/models\/([^:]+):/.exec(u)![1]);return new Response('{}',{status:503});};
+ await assert.rejects(runAgent('food',plan,data,[],{GEMINI_API_KEY:'test'},fake as any),/busy right now/);
+ assert.deepEqual(order,['gemini-3.6-flash','gemini-3.5-flash','gemini-3.5-flash-lite','gemini-2.5-flash','gemini-3.7-flash','gemini-3.8-flash']);
+});
+test('a timeout or network error on one model also moves on to the next model',async()=>{
+ let n=0;
+ const fake=async(url:any)=>{const u=String(url);
+  if(u.includes('/models?'))return Response.json({models:[okModel('gemini-3.6-flash'),okModel('gemini-2.5-flash')]});
+  if(u.includes('gemini-3.6-flash:generateContent'))throw new DOMException('timed out','TimeoutError');
+  return Response.json(++n===1?toolCall:finalAnswer);};
+ const r=await runAgent('food',plan,data,[],{GEMINI_API_KEY:'test'},fake as any);
+ assert.equal(r.model,'gemini-2.5-flash');
 });
 test('persistent Gemini failure gives a friendly message, not API details',async()=>{
  const fake=async()=>new Response('{}',{status:503});

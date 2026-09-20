@@ -27,16 +27,20 @@ export async function loadCampus(c:AgentConfig,local:Data,fetcher:Fetcher=fetch)
 class Busy extends Error{}
 const BUSY_MESSAGE='The AI planner is busy right now. Please try again in a moment, or use the manual planner below.';
 
-// Other Flash models this API key can call, newest first (used only if the primary is overloaded).
+// Other plain Flash models this API key can call. Quotas and load are per model, so on a 429/503 we
+// move to another one. Order: closest older versions first (established, usually less loaded), then
+// newer ones; non-lite before lite within a version.
 async function fallbackModels(c:AgentConfig,primary:string,fetcher:Fetcher){
  const r=await fetcher('https://generativelanguage.googleapis.com/v1beta/models?pageSize=200',{headers:{'x-goog-api-key':c.GEMINI_API_KEY!},signal:AbortSignal.timeout(10000)});
  if(!r.ok)return [];
  const list=(await r.json() as any).models;
  if(!Array.isArray(list))return [];
+ const pv=parseFloat(/^gemini-(\d+(?:\.\d+)?)-flash/.exec(primary)?.[1]||'')||Infinity;
+ const rank=(m:any)=>(m.version<pv?0:1e6)+(m.version<pv?-m.version:m.version)*1000+Number(m.lite);
  return list.flatMap((m:any)=>{
   const id=/^models\/(gemini-(\d+(?:\.\d+)?)-flash(-lite)?)$/.exec(m?.name||'');
   return id&&m.supportedGenerationMethods?.includes('generateContent')&&id[1]!==primary?[{id:id[1],version:parseFloat(id[2]),lite:!!id[3]}]:[];
- }).sort((a:any,b:any)=>b.version-a.version||Number(a.lite)-Number(b.lite)).map((m:any)=>m.id).slice(0,2) as string[];
+ }).sort((a:any,b:any)=>rank(a)-rank(b)).map((m:any)=>m.id).slice(0,5) as string[];
 }
 
 export async function runAgent(request:string,plan:Plan,local:Data,reports:Report[],c:AgentConfig,fetcher:Fetcher=fetch){
@@ -56,18 +60,15 @@ export async function runAgent(request:string,plan:Plan,local:Data,reports:Repor
 }
 
 async function runWithModel(model:string,request:string,plan:Plan,local:Data,reports:Report[],c:AgentConfig,fetcher:Fetcher){
- // Gemini intermittently answers 429/5xx under load; retry once before switching models.
+ // A 429 (rate limit) or 5xx (overloaded) is not retried on the same model: that only burns quota and
+ // time. runAgent switches to another model instead.
  const call=async(body:unknown)=>{
-  let status=0;
-  for(let attempt=0;attempt<2;attempt++){
-   if(attempt)await new Promise(r=>setTimeout(r,400));
-   const r=await fetcher(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,{method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':c.GEMINI_API_KEY!},body:JSON.stringify(body),signal:AbortSignal.timeout(30000)});
-   if(r.ok)return r.json() as Promise<any>;
-   status=r.status;
-   if(![429,500,502,503,504].includes(status))break;
-  }
-  console.error(`Gemini ${model} request failed (${status})`);
-  if([429,500,502,503,504].includes(status))throw new Busy(BUSY_MESSAGE);
+  let r:Response;
+  try{r=await fetcher(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,{method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':c.GEMINI_API_KEY!},body:JSON.stringify(body),signal:AbortSignal.timeout(20000)});}
+  catch{console.error(`Gemini ${model} request timed out or could not connect`);throw new Busy(BUSY_MESSAGE);}
+  if(r.ok)return r.json() as Promise<any>;
+  console.error(`Gemini ${model} request failed (${r.status})`);
+  if([429,500,502,503,504].includes(r.status))throw new Busy(BUSY_MESSAGE);
   throw Error('The AI planner is temporarily unavailable. Please use the manual planner below.');
  };
  const declarations=[{name:'find_campus_options',description:'Find real campus destinations, using available Databricks data and time constraints. Call before recommending any destination.',parameters:{type:'OBJECT',properties:{intent:{type:'STRING',enum:['study','quiet','group','eat','break']},maxWalk:{type:'INTEGER',description:'Maximum walking minutes per leg, 2 to 20'}},required:['intent','maxWalk']}}];
