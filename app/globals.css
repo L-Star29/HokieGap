@@ -1,8 +1,162 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "../vendor/shadcn-tailwind-4.13.0.css";
-:root{--background:#fff;--foreground:#262b25;--primary:#861f41;--primary-foreground:#fff;--secondary:#f3f1eb;--secondary-foreground:#262b25;--accent:#f1ebe6;--accent-foreground:#861f41;--muted:#f3f1eb;--muted-foreground:#686c64;--border:#dedfd7;--input:#d4d7ce;--ring:#861f41;--radius:.5rem;--destructive:#aa2631}
-*{box-sizing:border-box}body{margin:0;background:#f8f8f3;color:#262b25;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5}button,select,input{font:inherit}button,a,input,select,summary{outline-offset:4px}button{cursor:pointer}a{color:inherit}h1,h2,h3,p{margin:0}h2{font-size:19px;font-weight:700}h3{font-size:17px;font-weight:700}.topbar{height:82px;padding:0 4%;display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid #dce0d7}.wordmark{display:flex;gap:10px;align-items:center;font-size:25px;font-weight:800;letter-spacing:-1px;text-decoration:none}.logo{background:#861f41;color:#fff;border-radius:9px;width:36px;height:36px;text-align:center;line-height:32px;font-size:27px}.logo span{color:#eea75b}.beta{font-size:10px;letter-spacing:1.3px;font-weight:700;color:#6c7267;margin-left:6px}.campus-label,.source-link{display:flex;gap:6px;align-items:center;font-size:14px;color:#656b61}.source-link{text-decoration:none}.source-link:hover{text-decoration:underline}main{max-width:1500px;margin:auto;padding:34px 4% 0}.intro{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px}.eyebrow{font-size:11px;font-weight:700;letter-spacing:1.8px;color:#861f41;margin-bottom:8px}h1{font-size:clamp(30px,3vw,43px);font-weight:750;letter-spacing:-1.8px;line-height:1.15;margin-bottom:10px}.intro p:not(.eyebrow){color:#676c63}.gap-number{display:flex;gap:12px;align-items:center;max-width:190px}.gap-number strong{font-size:58px;letter-spacing:-3px;line-height:1;color:#861f41}.gap-number span{font-size:14px;color:#656b61;line-height:1.3}.workspace{display:grid;grid-template-columns:260px minmax(320px,1fr) 325px;gap:25px;align-items:start}.planner{padding:22px;background:#eeeee7;border:1px solid #dfe1d7;border-radius:12px}.panel-title{display:flex;gap:10px;align-items:center;margin-bottom:18px}.step{font-size:11px;border:1px solid #c8cdbf;border-radius:50%;width:24px;height:24px;display:grid;place-items:center;color:#646e5b;font-weight:700}form{display:grid;gap:15px}label{display:grid;gap:6px;font-size:14px;font-weight:600;color:#52584e}[data-slot=native-select-wrapper]{width:100%}[data-slot=native-select],[data-slot=input]{height:41px;background:white;border-radius:6px;font-size:14px;box-shadow:none;color:#262b25}input[type=time]{padding:3px 7px;font-size:14px}.two-fields{display:grid;grid-template-columns:1fr 1fr;gap:8px}.primary-btn{width:100%;height:46px!important;margin-top:3px;background:#861f41!important;color:white!important;border-radius:6px!important;font-size:15px!important}.quick-actions{display:flex;justify-content:space-between;margin-top:11px}.quick-actions button{font-size:12px;padding:0 3px}.caption{font-size:12px;color:#626a5b;line-height:1.5;margin-top:10px}.results-heading{display:flex;align-items:center;justify-content:space-between}.results-heading .panel-title{margin-bottom:3px}.results-heading>span{font-size:12px;color:#71776c}.results-sub{font-size:14px;color:#62695c;margin-bottom:13px}.report-strip{display:flex;gap:7px;align-items:center;font-size:12px;color:#66725e;margin-bottom:13px}.report-strip button{margin-left:auto}.status-dot{height:6px;width:6px;border-radius:50%;background:#93a386}.spot-card{background:white;border:1px solid #dce0d5;border-radius:10px;padding:19px 21px 8px;margin-bottom:13px;transition:border-color .2s}.spot-card.selected{border:1.5px solid #861f41;box-shadow:0 3px 12px #861f4107}.card-kicker{display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:1.2px;font-weight:700;color:#747c6c;margin-bottom:10px}.selected .card-kicker>span:first-child{color:#861f41}.surge{font-size:12px;letter-spacing:0;font-weight:500;border-radius:4px;background:#f1f3e9;padding:3px 7px;color:#52633f}.surge.high{background:#fff0df;color:#8d4c1a}.spot-title{display:flex;justify-content:space-between;width:100%;gap:10px;text-align:left;background:transparent;border:0;font-size:20px;font-weight:700;letter-spacing:-.5px;padding:0}.location{font-size:12px;color:#626a5c;margin-top:4px}.metrics{display:flex;align-items:center;gap:17px;margin:16px 0 13px}.metrics strong{font-size:30px;color:#861f41;line-height:1}.metrics strong small{font-size:12px;font-weight:400;color:#6b7362;letter-spacing:0}.metrics>span{display:flex;gap:5px;align-items:center;font-size:12px;color:#56604d}.card-bottom{border-top:1px solid #edefe7;padding-top:11px;display:flex;justify-content:space-between;gap:6px;font-size:12px;color:#646e58}.seat-report{font-weight:700;color:#547246}.card-actions{display:flex;justify-content:space-between;margin-top:6px}.card-actions button{font-size:14px;padding:0;height:36px}.selected .card-actions button:first-child{color:#861f41}.detail-panel{border-left:1px solid #dfe2d6;padding-left:24px}.mini-map{position:relative;background:#eeeee5;border-radius:8px;margin-bottom:18px;overflow:hidden}.mini-map svg{display:block;width:100%}.mini-map>span{display:block;font-size:10px;color:#667254;padding:0 10px 8px}.detail-name{margin-bottom:20px;font-size:18px}.timeline{padding:0;list-style:none;margin:0 0 25px}.timeline li{display:grid;grid-template-columns:69px 1fr;gap:10px;font-size:14px;position:relative;padding-bottom:20px}.timeline li>span{color:#58634b;font-size:12px;padding-top:2px}.timeline li>div{border-left:1px solid #d0d6c5;padding-left:14px;position:relative}.timeline li>div:before{content:'';position:absolute;width:7px;height:7px;border-radius:50%;background:#a9b39c;left:-4px;top:5px}.timeline .main-stop>div:before{background:#861f41}.timeline .main-stop>div{color:#861f41;font-weight:700}.timeline small{display:block;font-size:12px;font-weight:400;color:#616c54;margin-top:3px}.forecast{padding:16px;background:#efefe7;border-radius:8px}.forecast>div:first-child{display:flex;align-items:center;justify-content:space-between;gap:5px}.forecast h3{font-size:14px}.small-tag{font-size:9px;letter-spacing:1px;color:#626e52}.forecast>p:not(.caption):not(.event){font-size:14px;color:#586649;margin:7px 0}.bars{display:flex;gap:8px;align-items:end;height:86px}.bars>div{flex:1;display:flex;flex-direction:column;justify-content:end;min-width:0;height:100%}.bars span{display:block;border-radius:3px 3px 0 0}.bars small{font-size:10px;height:15px;margin-top:4px;color:#637151}.event{font-size:12px;margin-top:10px;padding-top:8px;border-top:1px solid #dce0d1}.event small{display:block;font-size:11px;color:#626f52}.backup{display:flex;gap:10px;background:#e6eddf;border-radius:6px;padding:12px;margin-top:18px;font-size:12px}.backup strong{display:block;font-size:14px}.place-details{font-size:14px;margin-top:20px;color:#58644c}.place-details summary{cursor:pointer;font-weight:600}.place-details p{margin-top:12px}.place-details a{display:flex;gap:5px;align-items:center;color:#861f41;margin-top:10px}.community{border-top:1px solid #d9ddce;border-bottom:1px solid #d9ddce;margin-top:40px;padding:28px 0;display:grid;grid-template-columns:1fr 1fr;gap:50px}.community h2{font-size:23px;letter-spacing:-.6px;margin-bottom:8px}.community p:not(.eyebrow):not(.caption){color:#59674e;font-size:16px;max-width:480px}.report-controls label{max-width:420px}.report-buttons{display:flex;gap:7px;margin-top:12px;flex-wrap:wrap}.report-buttons button{background:white;font-size:14px}.report-controls [role=status]{margin-top:10px;font-size:14px}.data-notes{margin-top:22px;font-size:14px;color:#59684b}.data-notes summary{display:flex;align-items:center;gap:8px;cursor:pointer}.notes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:35px;padding:23px 0}.notes-grid h3{font-size:16px;color:#414b38}.notes-grid p{margin:8px 0}.notes-grid a{color:#861f41}footer{display:flex;justify-content:space-between;align-items:center;padding:30px 0;color:#687458;font-size:12px}footer .wordmark{font-size:20px}.error{color:#a32136;font-size:14px}.empty{padding:45px 20px;text-align:center;border:1px dashed #c4cebb;border-radius:10px}.empty p{font-size:14px;color:#61714f;margin-top:8px}button:disabled{cursor:default}
-@media(min-width:1450px){.workspace{grid-template-columns:270px minmax(390px,1fr) 350px;gap:32px}.metrics{gap:23px}}
-@media(max-width:1120px){.workspace{grid-template-columns:230px minmax(300px,1fr)}.detail-panel{grid-column:2;border-left:0;padding:20px;background:#f0f1e8;border-radius:10px}.planner{position:sticky;top:20px}.detail-panel .mini-map{max-width:400px}.campus-label{display:none}}
-@media(max-width:700px){.topbar{height:65px;padding:0 5%}.topbar .beta{display:none}.source-link{font-size:12px}main{padding:24px 5% 0}.intro{margin-bottom:25px}.intro h1{font-size:30px}.intro p:not(.eyebrow){font-size:14px}.gap-number{display:none}.workspace{display:flex;flex-direction:column;gap:25px}.planner,.results,.detail-panel{width:100%}.planner{position:static;padding:20px}.planner form{grid-template-columns:1fr 1fr;gap:13px}.planner form>label,.primary-btn,.error,.planner .two-fields{grid-column:1/-1}.planner .caption{margin-top:0}.quick-actions{margin-top:4px}.detail-panel{padding:20px}.community{grid-template-columns:1fr;gap:24px}.notes-grid{grid-template-columns:1fr;gap:17px}.spot-card{padding:18px 16px 8px}.metrics{gap:13px;flex-wrap:wrap}.metrics strong{font-size:29px}.metrics>span{font-size:12px}.spot-title{font-size:19px}footer>span:last-child{display:none}}
+
+/* Tokens. Names and values follow DESIGN.md. The first block feeds the shadcn components. */
+:root {
+  --background: #fff;
+  --foreground: #262b25;
+  --primary: #861f41;
+  --primary-foreground: #fff;
+  --secondary: #f3f1eb;
+  --secondary-foreground: #262b25;
+  --accent: #f1ebe6;
+  --accent-foreground: #861f41;
+  --muted: #f3f1eb;
+  --muted-foreground: #5b6157;
+  --border: #dedfd7;
+  --input: #d4d7ce;
+  --ring: #861f41;
+  --radius: 0.5rem;
+  --destructive: #aa2631;
+
+  --maroon: #861f41;
+  --maroon-deep: #6f1936;
+  --maroon-mist: #f5dce5;
+  --amber: #eea75b;
+  --ember: #ce6a39;
+  --amber-wash: #fff0df;
+  --amber-ink: #8d4c1a;
+  --paper: #f8f8f3;
+  --sage: #eeeee7;
+  --white: #fff;
+  --ink: #262b25;
+  --ink-2: #52584e;
+  --gray: #5b6157;
+  --hairline: #dedfd7;
+  --input-line: #d4d7ce;
+  --meadow: #547246;
+  --meadow-wash: #e6eddf;
+  --meadow-bar: #9aab90;
+  --meadow-mist: #f1f3e9;
+  --meadow-ink: #52633f;
+  --sand-bar: #d8ad72;
+  --alarm: #a32136;
+
+  color-scheme: light;
+  accent-color: var(--maroon);
+}
+
+/* Maps the tokens above onto the Tailwind color utilities the shadcn components use (bg-primary, border-input, ring-ring, ...). */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-color: var(--border);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+button,
+select,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h2 {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+::selection {
+  background: var(--maroon);
+  color: var(--white);
+}
+
+input {
+  caret-color: var(--maroon);
+}
+
+/* Keyboard focus for the custom (non-shadcn) controls; shadcn controls draw their own ring. */
+:where(a, button, summary, select):not([data-slot]):focus-visible {
+  outline: 2px solid var(--maroon);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
