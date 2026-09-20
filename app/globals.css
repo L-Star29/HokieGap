@@ -2,6 +2,55 @@
 @import "tw-animate-css";
 @import "../vendor/shadcn-tailwind-4.13.0.css";
 
+/* Barlow and Barlow Semi Condensed (SIL Open Font License, see public/fonts/OFL-Barlow.txt), self-hosted so no font request leaves this domain. */
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/barlow-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/barlow-latin-500-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/barlow-latin-600-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/barlow-latin-700-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/barlow-semi-condensed-latin-600-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/barlow-semi-condensed-latin-700-normal.woff2") format("woff2");
+}
+
 /* Tokens. Names and values follow DESIGN.md. The first block feeds the shadcn components. */
 :root {
   --background: #fff;
@@ -42,6 +91,13 @@
   --meadow-ink: #52633f;
   --sand-bar: #d8ad72;
   --alarm: #a32136;
+  --walk: #b9c4ac;
+  --buffer-a: #efd9b6;
+  --buffer-b: #f7ebd5;
+  --tint: #f5eeea;
+
+  --font-text: "Barlow", "Segoe UI", Arial, sans-serif;
+  --font-figure: "Barlow Semi Condensed", "Barlow", "Arial Narrow", Arial, sans-serif;
 
   color-scheme: light;
   accent-color: var(--maroon);
@@ -83,7 +139,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-text);
   font-size: 16px;
   line-height: 1.5;
   font-variant-numeric: tabular-nums;
@@ -125,7 +181,7 @@ p {
 }
 
 h2 {
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 700;
 }
 

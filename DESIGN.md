@@ -1,155 +1,299 @@
 ---
 name: HokieGap
-description: A calm campus departure board for the gap between two classes.
+description: A calm campus departure board that draws the gap between two classes to scale.
 colors:
   chicago-maroon: "#861f41"
   chicago-maroon-deep: "#6f1936"
   maroon-mist: "#f5dce5"
+  maroon-tint: "#f5eeea"
+  selected-border: "#dcc7cf"
   gap-amber: "#eea75b"
   ember: "#ce6a39"
   amber-wash: "#fff0df"
   amber-ink: "#8d4c1a"
+  buffer-amber: "#efd9b6"
+  buffer-cream: "#f7ebd5"
+  sand-bar: "#d8ad72"
   field-paper: "#f8f8f3"
   sage-panel: "#eeeee7"
-  surface-white: "#ffffff"
+  surface-white: "#fff"
+  accent-wash: "#f1ebe6"
+  secondary-paper: "#f3f1eb"
   moss-ink: "#262b25"
+  moss-ink-2: "#52584e"
   moss-gray: "#5b6157"
   hairline: "#dedfd7"
   input-line: "#d4d7ce"
+  saved-rule: "#d6dace"
+  event-rule: "#dce0d1"
+  planner-rule: "#dfe1d7"
+  empty-dash: "#c4cebb"
+  skeleton-fill: "#ecece4"
+  tick-minor: "#b4baa9"
+  tick-major: "#7d8474"
+  walk-sage: "#b9c4ac"
   meadow-green: "#547246"
   meadow-wash: "#e6eddf"
   meadow-bar: "#9aab90"
   meadow-mist: "#f1f3e9"
   meadow-ink: "#52633f"
   alarm-red: "#a32136"
+  destructive-red: "#aa2631"
 typography:
   display:
-    fontFamily: "Arial, Helvetica, sans-serif"
-    fontSize: "clamp(30px, 3vw, 41px)"
-    fontWeight: 750
-    lineHeight: 1.12
-    letterSpacing: "-0.03em"
-  numeral:
-    fontFamily: "Arial, Helvetica, sans-serif"
+    fontFamily: "Barlow, 'Segoe UI', Arial, sans-serif"
+    fontSize: "38px"
+    fontWeight: 700
+    lineHeight: 1.08
+    letterSpacing: "-0.025em"
+  display-phone:
+    fontFamily: "Barlow, 'Segoe UI', Arial, sans-serif"
+    fontSize: "32px"
+    fontWeight: 700
+    lineHeight: 1.08
+    letterSpacing: "-0.025em"
+  leave-numeral:
+    fontFamily: "'Barlow Semi Condensed', Barlow, 'Arial Narrow', Arial, sans-serif"
+    fontSize: "68px"
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: "-0.02em"
+  leave-numeral-phone:
+    fontFamily: "'Barlow Semi Condensed', Barlow, 'Arial Narrow', Arial, sans-serif"
     fontSize: "56px"
     fontWeight: 700
     lineHeight: 1
-    letterSpacing: "-2.2px"
+    letterSpacing: "-0.02em"
+  answer-name:
+    fontFamily: "Barlow, 'Segoe UI', Arial, sans-serif"
+    fontSize: "36px"
+    fontWeight: 700
+    lineHeight: 1.1
+    letterSpacing: "-0.02em"
+  answer-name-phone:
+    fontFamily: "Barlow, 'Segoe UI', Arial, sans-serif"
+    fontSize: "30px"
+    fontWeight: 700
+    lineHeight: 1.1
+    letterSpacing: "-0.02em"
+  stat-numeral:
+    fontFamily: "'Barlow Semi Condensed', Barlow, 'Arial Narrow', Arial, sans-serif"
+    fontSize: "30px"
+    fontWeight: 700
+    lineHeight: 1.05
+    letterSpacing: "-0.01em"
+  headline-section:
+    fontFamily: "Barlow, 'Segoe UI', Arial, sans-serif"
+    fontSize: "26px"
+    fontWeight: 700
+    lineHeight: 1.15
+    letterSpacing: "-0.015em"
+  headline-results:
+    fontFamily: "Barlow, 'Segoe UI', Arial, sans-serif"
+    fontSize: "24px"
+    fontWeight: 700
+    lineHeight: 1.5
+    letterSpacing: "-0.01em"
+  wordmark-footer:
+    fontFamily: "Barlow, 'Segoe UI', Arial, sans-serif"
+    fontSize: "22px"
+    fontWeight: 700
+    lineHeight: 1.5
+    letterSpacing: "-0.02em"
+  title-place:
+    fontFamily: "Barlow, 'Segoe UI', Arial, sans-serif"
+    fontSize: "21px"
+    fontWeight: 700
+    lineHeight: 1.2
+    letterSpacing: "-0.01em"
+  step-time:
+    fontFamily: "'Barlow Semi Condensed', Barlow, 'Arial Narrow', Arial, sans-serif"
+    fontSize: "21px"
+    fontWeight: 700
+    lineHeight: 1.2
+    letterSpacing: "normal"
   headline:
-    fontFamily: "Arial, Helvetica, sans-serif"
+    fontFamily: "Barlow, 'Segoe UI', Arial, sans-serif"
     fontSize: "20px"
     fontWeight: 700
     lineHeight: 1.5
-    letterSpacing: "-0.5px"
+    letterSpacing: "normal"
+  segment-numeral:
+    fontFamily: "'Barlow Semi Condensed', Barlow, 'Arial Narrow', Arial, sans-serif"
+    fontSize: "19px"
+    fontWeight: 600
+    lineHeight: 1.5
+    letterSpacing: "normal"
   title:
-    fontFamily: "Arial, Helvetica, sans-serif"
+    fontFamily: "Barlow, 'Segoe UI', Arial, sans-serif"
     fontSize: "17px"
     fontWeight: 700
     lineHeight: 1.5
     letterSpacing: "normal"
   body:
-    fontFamily: "Arial, Helvetica, sans-serif"
+    fontFamily: "Barlow, 'Segoe UI', Arial, sans-serif"
     fontSize: "16px"
     fontWeight: 400
     lineHeight: 1.5
     letterSpacing: "normal"
-  body-sm:
-    fontFamily: "Arial, Helvetica, sans-serif"
-    fontSize: "14px"
+  button:
+    fontFamily: "Barlow, 'Segoe UI', Arial, sans-serif"
+    fontSize: "16px"
+    fontWeight: 600
+    lineHeight: 1.5
+    letterSpacing: "normal"
+  ui:
+    fontFamily: "Barlow, 'Segoe UI', Arial, sans-serif"
+    fontSize: "15px"
     fontWeight: 400
     lineHeight: 1.5
     letterSpacing: "normal"
   label:
-    fontFamily: "Arial, Helvetica, sans-serif"
-    fontSize: "14px"
+    fontFamily: "Barlow, 'Segoe UI', Arial, sans-serif"
+    fontSize: "15px"
     fontWeight: 600
     lineHeight: 1.5
     letterSpacing: "normal"
-  caption:
-    fontFamily: "Arial, Helvetica, sans-serif"
-    fontSize: "12px"
+  body-sm:
+    fontFamily: "Barlow, 'Segoe UI', Arial, sans-serif"
+    fontSize: "14px"
     fontWeight: 400
     lineHeight: 1.5
     letterSpacing: "normal"
+  caption:
+    fontFamily: "Barlow, 'Segoe UI', Arial, sans-serif"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: 1.45
+    letterSpacing: "normal"
+  caption-tight:
+    fontFamily: "Barlow, 'Segoe UI', Arial, sans-serif"
+    fontSize: "12.5px"
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: "normal"
+  label-micro:
+    fontFamily: "Barlow, 'Segoe UI', Arial, sans-serif"
+    fontSize: "12px"
+    fontWeight: 700
+    lineHeight: 1.5
+    letterSpacing: "0.06em"
 rounded:
+  xxs: "3px"
   xs: "4px"
   sm: "6px"
   md: "8px"
+  logo: "9px"
   lg: "10px"
   xl: "12px"
   full: "50%"
 spacing:
+  xs: "4px"
   hair: "6px"
   sm: "10px"
-  field-gap: "15px"
-  panel-pad: "22px"
-  column-gap: "25px"
+  field-gap: "12px"
+  md: "16px"
+  section: "22px"
+  gutter: "24px"
+  column-gap: "32px"
   page-top: "34px"
+  community-gap: "48px"
 components:
   button-primary:
     backgroundColor: "{colors.chicago-maroon}"
     textColor: "{colors.surface-white}"
-    typography: "{typography.body-sm}"
+    typography: "{typography.button}"
     rounded: "{rounded.sm}"
-    height: "46px"
-    padding: "8px 16px"
+    height: "44px"
+    padding: "0 22px"
   button-primary-hover:
+    backgroundColor: "{colors.chicago-maroon-deep}"
+  directions-button:
+    backgroundColor: "{colors.chicago-maroon}"
+    textColor: "{colors.surface-white}"
+    typography: "{typography.button}"
+    rounded: "{rounded.md}"
+    padding: "12px 14px"
+  directions-button-hover:
     backgroundColor: "{colors.chicago-maroon-deep}"
   button-outline:
     backgroundColor: "{colors.surface-white}"
     textColor: "{colors.moss-ink}"
-    typography: "{typography.body-sm}"
+    typography: "{typography.ui}"
     rounded: "{rounded.sm}"
-    height: "36px"
-    padding: "8px 16px"
-  button-ghost:
+    height: "44px"
+  button-card-action:
     backgroundColor: "transparent"
-    textColor: "{colors.moss-ink}"
-    typography: "{typography.caption}"
-    height: "36px"
-    padding: "0"
-  button-ghost-selected:
-    textColor: "{colors.chicago-maroon}"
-  route-link:
-    backgroundColor: "{colors.chicago-maroon}"
-    textColor: "{colors.surface-white}"
+    textColor: "{colors.moss-ink-2}"
     typography: "{typography.body-sm}"
-    rounded: "7px"
-    padding: "12px 14px"
-  route-link-hover:
-    backgroundColor: "{colors.chicago-maroon-deep}"
+    height: "40px"
+    padding: "0 10px"
+  button-card-action-selected:
+    textColor: "{colors.chicago-maroon}"
   field-input:
     backgroundColor: "{colors.surface-white}"
     textColor: "{colors.moss-ink}"
-    typography: "{typography.body-sm}"
+    typography: "{typography.ui}"
     rounded: "{rounded.sm}"
-    height: "41px"
-    padding: "4px 12px"
-  spot-card:
+    height: "44px"
+  gap-bar:
+    backgroundColor: "{colors.sage-panel}"
+    rounded: "{rounded.xl}"
+    padding: "16px 20px 8px"
+  answer-band:
+    backgroundColor: "{colors.surface-white}"
+    textColor: "{colors.moss-ink}"
+    rounded: "{rounded.xl}"
+    padding: "26px 30px 22px"
+  ask-card:
+    backgroundColor: "{colors.surface-white}"
+    rounded: "{rounded.lg}"
+    padding: "14px 16px"
+  place-row:
     backgroundColor: "{colors.surface-white}"
     textColor: "{colors.moss-ink}"
     rounded: "{rounded.lg}"
-    padding: "19px 21px 8px"
-  spot-card-selected:
-    backgroundColor: "{colors.surface-white}"
-  planner-panel:
-    backgroundColor: "{colors.sage-panel}"
-    rounded: "{rounded.xl}"
-    padding: "{spacing.panel-pad}"
+    padding: "16px 20px 6px"
+  place-row-active:
+    backgroundColor: "{colors.maroon-tint}"
+    textColor: "{colors.chicago-maroon}"
+  best-tag:
+    backgroundColor: "{colors.chicago-maroon}"
+    textColor: "{colors.surface-white}"
+    typography: "{typography.caption}"
+    rounded: "{rounded.xs}"
+    padding: "3px 9px"
   activity-tag:
     backgroundColor: "{colors.meadow-mist}"
     textColor: "{colors.meadow-ink}"
     typography: "{typography.caption}"
     rounded: "{rounded.xs}"
-    padding: "3px 7px"
+    padding: "2px 8px"
   activity-tag-high:
     backgroundColor: "{colors.amber-wash}"
     textColor: "{colors.amber-ink}"
+  leave-tag:
+    backgroundColor: "{colors.moss-ink}"
+    textColor: "{colors.surface-white}"
+    typography: "{typography.body-sm}"
+    rounded: "{rounded.xs}"
+    padding: "3px 10px"
   notice:
     backgroundColor: "{colors.amber-wash}"
     textColor: "{colors.moss-ink}"
+    typography: "{typography.body-sm}"
     rounded: "{rounded.sm}"
-    padding: "10px"
+    padding: "10px 14px"
+  plan-b:
+    backgroundColor: "{colors.meadow-wash}"
+    textColor: "{colors.moss-ink}"
+    typography: "{typography.body-sm}"
+    rounded: "{rounded.md}"
+    padding: "14px"
+  forecast-panel:
+    backgroundColor: "{colors.sage-panel}"
+    rounded: "{rounded.lg}"
+    padding: "16px"
 ---
 
 # Design System: HokieGap
@@ -158,158 +302,168 @@ components:
 
 **Creative North Star: "The Between-Class Timetable"**
 
-HokieGap looks like a calm campus departure board. The student arrives in a hurry, with a number in mind: the minutes between one class and the next. The interface answers with timing first. The big gap-minutes figure, the leave-by clock time and the "minutes available" count are the largest, boldest things on the page. Everything else is quiet warm paper and hairlines so those numbers can be read at a glance on a phone between buildings.
+HokieGap is a calm campus departure board that draws the gap between two classes to scale. The student arrives in a hurry with a number in mind, the minutes until the next class, and the page answers it once: one place, one very large Leave-by time, and a ruler that shows the whole gap as lengths of time. Everything else (the comparison rows, the forecast, the inputs) is quiet warm paper and hairlines so the answer reads at a glance on a phone between buildings.
 
-The mood is calm, honest and friendly to someone in a hurry. Surfaces are pale and slightly green-tinted, text is plain-language, and every heuristic wears an "ESTIMATE" tag rather than pretending to be live. One color acts. Chicago Maroon marks the primary action, the selected place, the leave-by number and links, and nothing decorative competes with it. Depth comes from tonal layers (paper, sage panel, white card) and 1px borders, not from shadows.
+The mood is calm, honest and friendly to someone in a hurry. Surfaces are pale and faintly green-tinted, copy is plain-language, and every heuristic wears an "ESTIMATE" tag or a caption rather than posing as live data. One color acts: Chicago Maroon marks the primary action, the answer band's border, the settle-in segment, the leave-by numeral and links. Depth is tonal (paper, sage panel, white block) plus hairline borders, with no shadows. Time is the material: the ruler uses tick marks, a solid maroon settle-in segment, sage walking segments and a hatched buffer segment, and that vocabulary is the system's one signature.
 
-The system visually rejects gamified campus-app gloss, fake-live indicators and crowd-heatmap drama. Colors that suggest status (green, amber) are reserved for what the data actually says and never dress up guesses as measurements.
+The system visually rejects gamified campus-app gloss, fake-live indicators, crowd-heatmap drama, eyebrows above headings and real drop shadows. Status colors (meadow green, amber) are reserved for what the data actually says.
 
 **Key Characteristics:**
-- Timing numerals lead; labels and prose recede.
-- One action color (Chicago Maroon) used sparingly against warm, green-tinted neutrals.
-- Flat and precise: hairline-bordered white cards on paper, 6 to 12px radii, no real shadows.
-- Numbered steps (01, 02, 03) turn the planner into a left-to-right procedure: your gap, places that fit, your route.
-- Estimates are labeled as estimates, in small caps tags and caption text.
-- System Arial throughout; no custom typeface is loaded.
+- The Answer Board: intro row, one-row gap bar, a maroon-bordered answer band, then aligned comparison rows with a "About this pick" aside.
+- Times and minutes are set in Barlow Semi Condensed; prose and labels in Barlow. Both self-hosted.
+- One action color (Chicago Maroon) against warm, green-tinted neutrals.
+- Flat and precise: hairline-bordered white blocks on paper, 4 to 12px radii, no box shadows.
+- Selection is a border; focus is a maroon outline or ring.
+- Estimates are labeled as estimates.
 
 ## Colors
 
-A pale, green-tinted paper palette with a single deep maroon action color, a warm amber reserved for warnings and the logo glyph, and a muted meadow green for "quiet, open, fine" signals.
+A pale, green-tinted paper palette with a single deep maroon action color, warm amber reserved for the buffer, warnings and the logo glyph, and a muted meadow green for "quiet, open, fine" signals.
 
 ### Primary
-- **Chicago Maroon** (#861f41): VT's official maroon. The only action color: primary buttons, the route-link slab, the selected card's border, the leave-by numeral, the "settle in" timeline step, text-button links, focus rings (at 50% alpha) and the logo tile.
-- **Deep Maroon** (#6f1936): hover state for maroon slabs (route link, primary button).
-- **Maroon Mist** (#f5dce5): small text set on a maroon surface, such as the route-link subtitle.
+- **Chicago Maroon** (chicago-maroon): VT's official maroon and the only action color. Primary and directions buttons, the answer band's 1.5px border, the very large Leave-by numeral, the settle-in ruler segment, the Best-fit tag, the active row's place name and card actions, text-button links, focus outlines and rings, and the logo tile.
+- **Deep Maroon** (chicago-maroon-deep): hover for maroon slabs.
+- **Maroon Mist** (maroon-mist): small text set on a maroon surface, such as the directions-button subtitle.
+- **Maroon Tint** (maroon-tint): background of the active comparison row, paired with a **Selected Border** (selected-border) hairline.
 
 ### Secondary
-- **Gap Amber** (#eea75b): the "g" in the logo glyph. Not an action color.
-- **Ember** (#ce6a39): the bar color when forecast class-change activity is high.
-- **Amber Wash** (#fff0df) and **Amber Ink** (#8d4c1a): the "high class activity" tag; the pale-amber notice strip (#fff3df in the CSS) shares this family.
+- **Gap Amber** (gap-amber): the "g" in the logo glyph. Not an action color.
+- **Ember** (ember): forecast bars when class-change activity is high.
+- **Amber Wash** (amber-wash) and **Amber Ink** (amber-ink): the "high class activity" tag and the notice strip.
+- **Buffer Amber** (buffer-amber) and **Buffer Cream** (buffer-cream): the two stripes of the hatched buffer segment on the ruler and in its legend. A buffer is spare time, not a warning; do not use these for status.
+- **Sand Bar** (sand-bar): forecast bars with medium activity.
 
 ### Tertiary
-- **Meadow Green** (#547246): student seat-report text, the only place green means "someone saw seats".
-- **Meadow Mist** (#f1f3e9) and **Meadow Ink** (#52633f): the calm-state activity tag. **Meadow Wash** (#e6eddf): the Plan B panel background. **Meadow Bar** (#9aab90): forecast bars with low activity, and status dots near #93a386.
+- **Meadow Green** (meadow-green): student seat-report text, the only place green means "someone saw seats".
+- **Meadow Mist** and **Meadow Ink** (meadow-mist, meadow-ink): the calm-state activity tag. **Meadow Wash** (meadow-wash): Plan B and the AI result background. **Meadow Bar** (meadow-bar): forecast bars with low activity and the report status dot.
+- **Walk Sage** (walk-sage): the walking segments of the ruler and the legend swatch. It describes travel time, not data status.
 
 ### Neutral
-- **Field Paper** (#f8f8f3): page background. Pale, warm, faintly green.
-- **Sage Panel** (#eeeee7): the planner panel and other tinted containers (mini-map #eeeee5, forecast #efefe7, route panel #f0f1e8 on tablet).
-- **Surface White** (#ffffff): topbar, cards, inputs, outline buttons.
-- **Moss Ink** (#262b25): body text and headings; a near-black with olive undertone, never pure black.
-- **Moss Gray** (#5b6157): all secondary text: captions, metadata, locations, results copy. It holds at least 5.3:1 on every surface in the system, including Sage Panel and Meadow Wash. One role; do not add lighter grays.
-- **Hairline** (#dedfd7): card and section borders (variants #dce0d5, #dfe1d7 exist in the CSS). **Input Line** (#d4d7ce): field borders.
-- **Alarm Red** (#a32136): inline errors only.
+- **Field Paper** (field-paper): page background. Pale, warm, faintly green.
+- **Sage Panel** (sage-panel): the gap bar and the forecast panel.
+- **Surface White** (surface-white): topbar, answer band, Ask card, comparison rows, inputs, outline buttons.
+- **Moss Ink** (moss-ink): body text, headings and the ink Leave marker; a near-black with olive undertone, never pure black. **Moss Ink 2** (moss-ink-2): labels, legend text, card actions.
+- **Moss Gray** (moss-gray): the single secondary gray for all captions, metadata and location lines. It holds AA contrast on every surface in the system. One role; do not add lighter grays.
+- **Hairline** (hairline): the block border and the step-strip rule. **Input Line** (input-line): field borders.
+- **Secondary Paper** (secondary-paper) and **Accent Wash** (accent-wash): shadcn secondary and hover fills (outline-button hover, ghost hover). They exist in the token layer; do not use them as new surfaces.
+- **Alarm Red** (alarm-red): inline errors only.
 
 ### Named Rules
 **The One Action Color Rule.** Chicago Maroon is the only color that asks the student to do something. Amber and green describe data; they never appear on buttons.
 
-**The Tinted Neutral Rule.** Neutrals carry a faint yellow-green tint (paper, sage, moss). Do not introduce pure white backgrounds beside them except for raised surfaces (cards, topbar, fields), and never pure black text.
+**The Tinted Neutral Rule.** Neutrals carry a faint yellow-green tint (paper, sage, moss). Pure white is only for raised surfaces (blocks, topbar, fields), never pure black text.
 
-**The No False Status Rule.** Green and amber appear only where the data says so (seat reports, class-change activity). Never use them as decoration or to suggest availability the product cannot know.
+**The No False Status Rule.** Green and amber appear only where the data says so (seat reports, class-change activity, a buffer). Never use them to suggest availability the product cannot know.
+
+**The Sage Ground Rule.** Hairline variants exist in the build (saved-rule, event-rule, planner-rule, empty-dash, skeleton-fill, tick-minor, tick-major). They are documented because they ship; new work uses Hairline or Input Line instead of minting another neutral.
 
 ## Typography
 
-**Display Font:** Arial (with Helvetica, sans-serif)
-**Body Font:** Arial (with Helvetica, sans-serif)
-**Label/Mono Font:** none; labels are Arial, uppercase with wide tracking for the smallest tags.
+**Display Font:** Barlow (with Segoe UI, Arial, sans-serif), self-hosted at weights 400, 500, 600 and 700.
+**Body Font:** Barlow (same stack).
+**Numeral Font:** Barlow Semi Condensed (with Barlow, Arial Narrow, Arial, sans-serif), self-hosted at 600 and 700. Every clock time, minute count and ruler figure uses it.
 
-**Character:** A single system sans, tightened at large sizes (negative letter-spacing on the headline, numerals and card names) and opened at the smallest uppercase labels. The face is a default, not a commitment; hierarchy comes from size, weight and tracking, not from font pairing. Weight 750 on the H1 renders as bold in Arial.
+**Character:** Barlow comes from highway and transit signage, which suits a tool that points a student somewhere on time. The semi-condensed cut keeps clock times narrow and heavy so a 68px Leave-by still fits beside the directions button. Tabular numerals are on globally. Hierarchy comes from size and weight; letter-spacing tightens slightly at large sizes.
 
 ### Hierarchy
-- **Display** (750, clamp(30px, 3vw, 43px), 1.15, -1.8px): the page H1 "A little gap. A good place." (30px on phones). Tracking is -0.03em.
-- **Numeral** (700, 56px, 1, -2.2px): the gap-minutes figure in Chicago Maroon at the top right; hidden on phones. The card-level "minutes available" numeral is the same idea at 34px (30px on phones), set beside its label on one baseline.
-- **Headline** (700, 20px, -0.5px): place name on a card; panel headings (H2) sit at 19px.
-- **Title** (700, 17px): H3 sections in the detail panel and empty state.
-- **Body** (400, 16px, 1.5): page background text and intro paragraph; most interface copy is 14px.
-- **Body Small** (400, 14px, 1.5): the working size for form values, results copy, timeline steps and details.
-- **Label** (600, 14px): field labels, summaries, secondary buttons. Colored #52584e.
-- **Caption** (400, 12px, 1.5): location lines, metadata, forecast disclaimers, card footers.
+- **Display** (700, 38px, 1.08, -0.025em; 32px on phones): the page H1.
+- **Leave numeral** (Semi Condensed 700, 68px, 1, -0.02em; 56px on phones): the answer band's Leave-by time in Chicago Maroon. The biggest thing on the page.
+- **Answer name** (700, 36px, 1.1, -0.02em; 30px on phones): the picked place.
+- **Stat numeral** (Semi Condensed 700, 30px, 1.05, -0.01em): minutes and leave-by on comparison rows; minutes are maroon, leave-by is ink.
+- **Headline** (700, 26px for the seat-reports heading and the topbar wordmark, 24px for the results heading and the phone wordmark, 22px for the footer wordmark, 20px for H2 and the phone gap summary).
+- **Title** (700, 21px for the place name and the ruler step time in Semi Condensed; 17px for H3, the Ask heading, the ruler end times and the intro line).
+- **Segment numeral** (Semi Condensed 600, 19px; 17px on phones): minutes printed inside the maroon settle-in segment.
+- **Body** (400, 16px, 1.5): page text; buttons at 16px 600.
+- **UI** (400 or 600, 15px): form values, labels, the gap-bar controls, results copy.
+- **Body Small** (400 to 600, 14px): facts, card actions, the leave marker text, legends, step captions.
+- **Caption** (400, 13px, 1.45; 12.5px in the gap-bar tools row): metadata, disclaimers.
+- **Label micro** (700, 12px, 0.06em): the inline "ESTIMATE" tag beside the forecast heading, and forecast time labels at 400.
 
 ### Named Rules
-**The Numbers Lead Rule.** The largest, tightest type on any screen is a duration or a clock time. Headlines describe; numerals decide.
+**The Numbers Lead Rule.** The largest, tightest type on any screen is a duration or a clock time, and it is set in the semi-condensed cut. Headlines describe; numerals decide.
 
-**The Small-Caps Honesty Rule.** Every heuristic, forecast or snapshot gets a small uppercase tag or a caption saying what it is. Estimates are never set in the same voice as facts.
+**The Estimate Voice Rule.** Every heuristic, forecast or snapshot carries an "ESTIMATE" tag or a caption saying what it is, sitting beside or below its heading, never above it.
 
 ## Layout
 
-A three-column workspace on wide screens: a fixed-width planner (280px, 300px above 1450px), a flexible results list and a route-and-timing panel (340px, 360px above 1450px), separated by a 28px gap (32px above 1450px). Main content is capped at 1500px with 4% side gutters and a 28px top offset. The topbar is 72px (60px on phones). The "Ask HokieGap" request sits above the workspace as one compact row so the answer starts high on the page.
+The Answer Board is a single column capped at 1240px (24px side padding, 32px top). Top to bottom: a 64px white topbar with a bottom hairline; an intro row that is a two-column grid (headline and intro copy left, the Ask HokieGap card right at up to 580px, 32px gap, bottom-aligned); a one-row gap bar on a sage panel (From, Next class in, Free from, Class starts, I want to, then the maroon Find my spot button; preferences and save tools sit beneath); the answer band; then a lower area of two columns, comparison rows on the left and a 340px "About this pick" aside on the right, 32px apart.
 
-Responsive behavior is by column collapse, and the DOM order is the procedure order (your gap, places that fit, your route) at every size. At 1120px and below the workspace is two columns: the planner on the left, places above the route panel on the right; the route panel becomes a white bordered block. At 700px and below everything is a single column. The planner folds into a one-line summary of the gap ("3:55 AM – 4:55 AM · 60 min", the two buildings and the intent) with a Change control, so the first place is visible without scrolling through the form; the gap numeral and campus label are hidden; card actions grow to a 44px touch height.
+The answer band is a white block with a 1.5px maroon border. Its top row splits into place name, badge, location and facts on the left and, in a 340px column on the right, the Leave-by label, the 68px time, and a line below; the directions button sits under the name. Beneath is the to-scale ruler: a 48px track whose segments are sized by minutes (walk in Walk Sage, settle-in in maroon with the minutes printed inside, buffer hatched), a 2px ink marker with a Leave-by tag above it, tick marks below (5px minor, 9px major), start and end times, a legend, and a four-step strip (leave, settle in, head to class, next class) divided by a hairline.
 
-Rhythm is loose and pragmatic rather than a strict scale: 15px between form fields, 22px panel padding (20px on phones), 13px between cards, 19 to 21px card padding. A page's intro and steps are labeled 01, 02, 03 so the layout reads as a procedure.
+Comparison rows are a four-column grid: place and facts, minutes, walk, leave-by (96px, 76px, 108px numeral columns at 18px gap), with an actions row spanning underneath. Rhythm is pragmatic rather than a strict scale: 10px between rows, 12px in form grids, 22px between the gap bar and answer band, 34px before the lower area, 44px before seat reports.
+
+Breakpoints are 1180px (the max-width media query is 1179px) and 700px. Below 1180px the intro row stacks, the gap bar becomes a six-column grid, the lower area is one column, and the aside becomes an auto-fit grid of 300px minimum cards. At 700px and below the page is a flex column that reorders by task: intro, gap (folded into a 64px summary row with a Change control and a rotating chevron), then the answer band immediately, then the Ask card below it, then comparison rows. In the phone answer band the Leave-by time drops to 56px, the directions button goes full width, and the four-step strip becomes a list with an 82px time column. Card actions become 44px icon buttons. The topbar shrinks to 56px with 16px padding.
 
 ## Elevation & Depth
 
-Flat by design. Depth is tonal: Field Paper (page), Sage Panel (containers), Surface White (raised cards, topbar, fields). Borders are 1px hairlines. The product draws no shadows of its own; selection is carried by a 1.5px Chicago Maroon border and keyboard focus by a 2px maroon outline (custom controls) or a 3px maroon ring at 50% alpha (shadcn controls). The shadcn components ship a subtle `shadow-xs`, but the planner's inputs and selects reset it to none.
+Flat by design. Depth is tonal: Field Paper (page), Sage Panel (gap bar, forecast), Surface White (answer band, rows, Ask card, topbar, fields). Borders are 1px Hairline; the answer band is the one 1.5px maroon border. The product draws no box shadows of its own: selection is a border (the active row uses a Selected Border hairline on Maroon Tint), and keyboard focus is a 2px maroon outline (custom controls and the answer band, with 3 to 4px offset) or a 3px maroon ring at 50% alpha (shadcn controls). Text selection is maroon on white. The shadcn outline button ships a faint `shadow-xs`; the gap-bar and Ask inputs reset it to none.
 
 ### Named Rules
-**The Flat-By-Default Rule.** Surfaces are flat at rest. Selection and focus show up as borders and rings, not shadows.
+**The Flat-By-Default Rule.** Surfaces are flat at rest. Selection and focus show up as borders, outlines and rings, never shadows.
 
 ## Shapes
 
-Softly squared, never pill-shaped. Radius steps by container size: 4px for small tags, 6px for buttons, fields and the Plan B and notice strips, 7px for the route-link slab, 8px for the tinted forecast and mini-map panels, 10px for cards and the AI planner block, 12px for the planner panel, 9px on the logo tile. Circles (50%) are reserved for the step badges and status dots. Forecast bars round only their top corners (3px). The empty state uses a 1px dashed border in #c4cebb on a 10px radius.
+Softly squared, never pill-shaped. Radius steps by container size: 3px for legend swatches and the tops of forecast bars, 4px for tags and the ink Leave marker, 6px for buttons, fields and the notice strip and AI result, 8px for the directions button, the ruler track, and Plan B, 9px for the logo tile, 10px for comparison rows, the Ask card, the forecast panel, the empty state and skeleton rows, 12px for the gap bar and the answer band. Circles (50%) are only the status dot. The empty state is a 1px dashed border on a 10px radius. The ruler track is clipped to its radius and its segments are separated by 2px white rules.
 
 ## Components
 
-Tone: precise and matter-of-fact. Everything is a bordered white block on a paper or sage ground; the maroon slab is the one thing that shouts.
+Tone: precise and matter-of-fact. Everything is a bordered white block on paper or a sage panel; the maroon slab and the maroon Leave-by time are the only things that shout.
 
 ### Buttons
-- **Shape:** gently squared (6px radius).
-- **Primary:** Chicago Maroon fill, white text, 15px, 46px tall and full width in the planner ("Find my spot"). The shadcn default button in the same maroon is 36px tall with 16px side padding.
-- **Hover / Focus:** hover darkens to Deep Maroon (#6f1936) or 90% maroon on shadcn buttons; keyboard focus shows a 3px maroon ring at 50% alpha (shadcn) and a 4px outline offset globally.
-- **Outline:** white fill, 1px hairline border, hover to the pale accent tint (#f1ebe6) with maroon text; used for "Save this gap", seat-report choices and "Show more places".
-- **Ghost / card actions:** transparent, 12px text, 36px tall (42px on phones); the selected card's first action turns Chicago Maroon.
-- **Text button:** underlined Chicago Maroon, 13px, for low-priority actions ("Start now", "Remove").
-
-### Chips (activity tags)
-- **Style:** 12px text on a 4px-radius tag with a 3px 7px padding; calm state is Meadow Ink on Meadow Mist, high state is Amber Wash on Amber Ink.
-- **State:** state is carried by both color and label text ("Class activity: Low"), never color alone.
-
-### Best-fit tag
-- **Style:** solid Chicago Maroon, white 12px bold text, 4px radius, 3px 8px padding. It appears on the first card only, top right beside the place name. Other cards carry no rank label; order is the rank.
-
-### Cards / Containers
-- **Corner Style:** 10px for place cards, 12px for the planner panel, 8px for forecast and map.
-- **Background:** Surface White for cards; Sage Panel for the planner and forecast; Meadow Wash for Plan B.
-- **Shadow Strategy:** none; see Elevation & Depth.
-- **Border:** 1px hairline (#dce0d5); the selected card uses 1.5px Chicago Maroon.
-- **Internal Padding:** 18px 20px 6px on cards (the card actions row supplies the bottom rhythm), 20px on panels.
+- **Shape:** gently squared (6px radius); the directions button is 8px.
+- **Primary:** Chicago Maroon fill, white 16px 600 text, 44px tall ("Find my spot", full width in its grid cell). Hover darkens to Deep Maroon.
+- **Directions button:** a full-width maroon slab (8px radius, 12px 14px padding, capped at 440px on desktop) with a 16px 600 title, a 13px Maroon Mist subtitle and an arrow. The single most prominent action on the page.
+- **Outline:** white fill, 1px border, 44px tall, 15px text; used for seat-report choices, "Show more places" and the report CTA.
+- **Card actions:** transparent, 14px 500, 40px tall (44px square icon buttons on phones with labels hidden); the first action and any pressed action are Chicago Maroon.
+- **Text button:** underlined maroon, 14px 500, for low-priority actions.
+- **Focus:** 3px maroon ring at 50% alpha on shadcn buttons; 2px maroon outline elsewhere.
 
 ### Inputs / Fields
-- **Style:** 41px tall, white fill, 1px Input Line border, 6px radius, 14px text, no shadow. Native `select` and `input[type=time]` are used for reliability; the select chevron is a decorative lucide icon.
-- **Focus:** border shifts to maroon and a 3px maroon ring at 50% alpha appears.
-- **Error / Disabled:** inline errors in Alarm Red (14px, role="alert"); disabled controls drop to 50% opacity and lose pointer events.
+- **Style:** 44px tall, white fill, 1px Input Line border, 6px radius, 15px text, no shadow. Native `select` and time inputs are used for reliability.
+- **Focus:** border shifts to maroon with a 3px ring at 50% alpha.
+- **Error / Disabled:** inline errors in Alarm Red 15px; the shadcn invalid state uses Destructive Red. Disabled controls drop to 50% opacity.
+
+### Gap bar
+A sage panel (12px radius, 16px 20px 8px padding) holding a five-cell form row of 44px fields. Labels are 15px 600 Moss Ink 2 above each field. On phones it collapses to a summary row (Semi Condensed 20px time range, 14px gray detail, maroon Change control with a chevron that rotates 180 degrees in 150ms).
+
+### Answer band
+The white, maroon-bordered block that answers the question. It holds the place name, the "Best fit" tag, location, facts, the Leave-by numeral, the directions button, the ruler and the four-step strip. Its keyboard focus is a 2px maroon outline at 4px offset.
+
+### Ruler (signature component)
+The gap drawn to scale. A 48px track (44px on phones), 8px radius, segments sized by minutes: Walk Sage walks, a maroon settle-in segment with white Semi Condensed minutes, and a buffer hatched at 135 degrees in Buffer Amber and Buffer Cream. A 2px ink marker with an ink tag ("Leave by ...") marks the departure. Below sit 1px tick marks (Tick Minor 5px, Tick Major 9px), start and end times at 17px Semi Condensed, and a legend with 14px swatches. The hatching is the world's native material for spare time and is not decorative.
+
+### Comparison rows
+White 10px-radius rows with a hairline border, ordered by rank with no rank label except the first row's Best-fit tag. Columns are minutes (maroon numeral), walk and leave-by (ink numeral) in Barlow Semi Condensed 30px with 13px gray unit labels. The active row takes Maroon Tint, a Selected Border hairline and a maroon place name; background and border transition in 200ms.
+
+### Tags
+Activity tags are 13px 600 on a 4px radius (calm: Meadow Ink on Meadow Mist; high: Amber Ink on Amber Wash), always with words as well as color. The Best-fit tag is solid maroon with white 13px 700 text, 3px 9px padding, on the first row and the answer band.
+
+### About this pick (aside)
+A stack of a Sage Panel forecast (seven equal bars, 86px track, tops rounded 3px, Meadow Bar / Sand Bar / Ember by activity, an "ESTIMATE" label beside the heading), a Meadow Wash Plan B panel with a 40px minimum-height button, the 44px "Report seats at this place" CTA, and a collapsible "What we know about this spot" with a rotating chevron.
 
 ### Navigation
-- A white 72px topbar (60px on phones) with a bottom hairline: the wordmark (a 36px maroon logo tile with a white "h" and an amber "g", then "hokiegap" at 25px, 800, -1px) on the left, a "Virginia Tech" campus label (hidden below 1120px) and an "About the data" text link on the right. There is no menu; it is a single-page tool.
-
-### Route-and-timing timeline (signature component)
-A vertical ordered list with a 69px time column and a 1px left rule per step. Each step has a 7px dot on the rule. The primary "settle in" step turns Chicago Maroon and bold; other dots are a pale sage (#a9b39c). The four steps are leave, settle in, head to class, next class starts. It turns the timing-check principle into something scannable.
-
-### Forecast bars (signature component)
-Seven bars, equal width, 86px tall track, with their top corners rounded and heights mapped to the class-change score (6px to 58px). Meadow Bar for low, a sand tone (#d8ad72) for medium, Ember for high. Time labels appear on every third bar. It is always paired with an "ESTIMATE" tag and a caption that says low activity does not mean seats are available.
-
-### Gap summary (phone only)
-A full-width row at the top of the folded planner: the 01 step badge, the time range and duration in 15px bold, the two buildings and the intent in 12px Moss Gray (wrapping, never truncated to nothing), and a Chicago Maroon "Change" control with a chevron that flips when open. It is a button with aria-expanded; it disappears above 700px, where the planner is always open.
-
-### Route link
-A full-width Chicago Maroon slab (7px radius, 12px 14px padding) with a navigation icon, a 14px bold title "Open walking directions", an 11px Maroon Mist subtitle and an arrow. It is the single most prominent action in the detail panel.
+A white 64px topbar (56px on phones) with a bottom hairline: a 34px maroon logo tile with a white "h" and an amber "g" (9px radius), the "hokiegap" wordmark at 26px 700, a "Virginia Tech" campus label (hidden below 1180px) and an "About the data" text link. No menu; it is a single-page tool.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** use Chicago Maroon (#861f41) as the only action color and keep it to primary actions, selected states, the leave-by numeral and links.
-- **Do** lead with durations and clock times in the largest, tightest type on the screen.
-- **Do** tag every estimate or snapshot with an uppercase "ESTIMATE" label or a caption saying what it is, in the voice already used ("Estimated activity from classes, not total crowds").
+- **Do** use Chicago Maroon (#861f41) as the only action color, on primary actions, the answer band border, selected state, the settle-in segment and the Leave-by numeral.
+- **Do** set every time, minute count and numeral in Barlow Semi Condensed, and let the Leave-by time be the largest type on the page (68px, 56px on phones).
+- **Do** draw durations to scale: ruler segment widths are proportional to minutes.
+- **Do** tag every estimate or snapshot with "ESTIMATE" or a caption saying what it is, beside or below its heading.
 - **Do** express depth with tonal layers (Field Paper, Sage Panel, Surface White) and 1px hairlines (#dedfd7).
-- **Do** carry meaning in text as well as color: class activity tags, seat reports and errors always include words.
-- **Do** keep touch targets at least 42px tall on phones (card actions) and 41 to 46px for form controls.
+- **Do** carry meaning in words as well as color: tags, seat reports and errors always include text.
+- **Do** keep form controls and primary buttons at 44px, and card actions at 40px (44px on phones).
+- **Do** put the answer band immediately after the gap on phones, and move the Ask card below it.
+- **Do** honor prefers-reduced-motion: transitions and animation collapse to near zero and smooth scrolling turns off.
 
 ### Don't:
-- **Don't** put an eyebrow or kicker label above a heading. The heading carries its own weight.
+- **Don't** put an eyebrow or kicker above a heading. The heading carries its own weight.
 - **Don't** add gamified campus-app gloss: badges, streaks, confetti or leaderboards.
-- **Don't** use live indicators, pulsing dots or "now" styling for data that is a snapshot or a heuristic.
-- **Don't** design crowd-heatmap drama: no red-to-green gradients or dense heat overlays for the class-change forecast.
-- **Don't** use amber or green as decoration or as action colors; they mean "class activity" and "student seat report" and nothing else.
-- **Don't** introduce real drop shadows for depth. Selection is a 1.5px maroon border; focus is a ring.
-- **Don't** use pure black text or pure white page backgrounds; the neutrals carry the faint moss tint.
-- **Don't** make cards pill-shaped or fully rounded; the largest container radius is 12px, and only step badges and dots are circles.
+- **Don't** use live indicators, pulsing dots or "now" styling on snapshot or heuristic data. The only animation is the skeleton pulse while loading.
+- **Don't** design crowd-heatmap drama: no red-to-green gradients or dense heat overlays.
+- **Don't** use amber or green as decoration or as action colors.
+- **Don't** introduce real drop shadows for depth. Selection is a border; focus is an outline or ring.
+- **Don't** use pure black text or off-palette grays; there is one secondary gray (#5b6157).
+- **Don't** make blocks pill-shaped; the largest radius is 12px and only the status dot is a circle.
+- **Don't** revert to system Arial or set times in the text face; Barlow and Barlow Semi Condensed are the only faces.

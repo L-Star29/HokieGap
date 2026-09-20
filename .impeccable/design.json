@@ -1,381 +1,84 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-20T08:06:55.345Z",
+  "generatedAt": "2026-09-20T12:00:00.000Z",
   "title": "Design System: HokieGap",
   "extensions": {
     "colorMeta": {
-      "chicago-maroon": {
-        "role": "primary",
-        "displayName": "Chicago Maroon",
-        "canonical": "#861f41",
-        "tonalRamp": [
-          "#1e0007",
-          "#4c021f",
-          "#7b183a",
-          "#a43c5a",
-          "#cc627c",
-          "#f18aa2",
-          "#fdbdc9",
-          "#fee8ec"
-        ]
-      },
-      "chicago-maroon-deep": {
-        "role": "primary",
-        "displayName": "Deep Maroon",
-        "canonical": "#6f1936",
-        "tonalRamp": [
-          "#1e0008",
-          "#4d011f",
-          "#75223c",
-          "#9d445c",
-          "#c4687f",
-          "#e990a4",
-          "#febcca",
-          "#fee8ec"
-        ]
-      },
-      "maroon-mist": {
-        "role": "primary",
-        "displayName": "Maroon Mist",
-        "canonical": "#f5dce5",
-        "tonalRamp": [
-          "#13070c",
-          "#312127",
-          "#523f46",
-          "#755f67",
-          "#98828a",
-          "#bda7af",
-          "#dfcbd2",
-          "#fbe9ef"
-        ]
-      },
-      "gap-amber": {
-        "role": "secondary",
-        "displayName": "Gap Amber",
-        "canonical": "#eea75b",
-        "tonalRamp": [
-          "#140800",
-          "#392002",
-          "#643a00",
-          "#8e5813",
-          "#ba782a",
-          "#df9f5b",
-          "#fcc58f",
-          "#ffebd8"
-        ]
-      },
-      "ember": {
-        "role": "secondary",
-        "displayName": "Ember",
-        "canonical": "#ce6a39",
-        "tonalRamp": [
-          "#190500",
-          "#431701",
-          "#712e06",
-          "#a54509",
-          "#cc6a3a",
-          "#f19266",
-          "#fcc2a8",
-          "#ffe9e0"
-        ]
-      },
-      "amber-wash": {
-        "role": "secondary",
-        "displayName": "Amber Wash",
-        "canonical": "#fff0df",
-        "tonalRamp": [
-          "#110a03",
-          "#2e2419",
-          "#4e4335",
-          "#706455",
-          "#948778",
-          "#b8ac9d",
-          "#dbcfc1",
-          "#f7ede0"
-        ]
-      },
-      "amber-ink": {
-        "role": "secondary",
-        "displayName": "Amber Ink",
-        "canonical": "#8d4c1a",
-        "tonalRamp": [
-          "#170600",
-          "#3f1b00",
-          "#6b3404",
-          "#945322",
-          "#ba7749",
-          "#df9d72",
-          "#fcc39f",
-          "#ffeadd"
-        ]
-      },
-      "meadow-green": {
-        "role": "tertiary",
-        "displayName": "Meadow Green",
-        "canonical": "#547246",
-        "tonalRamp": [
-          "#030f00",
-          "#162d09",
-          "#324e25",
-          "#527044",
-          "#759467",
-          "#9bb88d",
-          "#bfdbb3",
-          "#dff7d4"
-        ]
-      },
-      "meadow-wash": {
-        "role": "tertiary",
-        "displayName": "Meadow Wash",
-        "canonical": "#e6eddf",
-        "tonalRamp": [
-          "#090c06",
-          "#24281f",
-          "#42473c",
-          "#63685c",
-          "#858c7f",
-          "#aab0a4",
-          "#ced3c8",
-          "#ebf0e6"
-        ]
-      },
-      "meadow-bar": {
-        "role": "tertiary",
-        "displayName": "Meadow Bar",
-        "canonical": "#9aab90",
-        "tonalRamp": [
-          "#060e02",
-          "#1f2b17",
-          "#3c4a33",
-          "#5c6c53",
-          "#7f8f75",
-          "#a4b49b",
-          "#c8d6bf",
-          "#e6f3df"
-        ]
-      },
-      "meadow-mist": {
-        "role": "tertiary",
-        "displayName": "Meadow Mist",
-        "canonical": "#f1f3e9",
-        "tonalRamp": [
-          "#0b0c07",
-          "#262721",
-          "#44463e",
-          "#65675f",
-          "#888a81",
-          "#adafa6",
-          "#d0d2ca",
-          "#eeefe8"
-        ]
-      },
-      "meadow-ink": {
-        "role": "tertiary",
-        "displayName": "Meadow Ink",
-        "canonical": "#52633f",
-        "tonalRamp": [
-          "#060e00",
-          "#1e2b0e",
-          "#3b4b29",
-          "#5c6d48",
-          "#7e906b",
-          "#a3b591",
-          "#c7d8b7",
-          "#e6f5d7"
-        ]
-      },
-      "field-paper": {
-        "role": "neutral",
-        "displayName": "Field Paper",
-        "canonical": "#f8f8f3",
-        "tonalRamp": [
-          "#0b0b09",
-          "#272723",
-          "#454541",
-          "#666662",
-          "#898985",
-          "#aeaeaa",
-          "#d1d1cd",
-          "#efefeb"
-        ]
-      },
-      "sage-panel": {
-        "role": "neutral",
-        "displayName": "Sage Panel",
-        "canonical": "#eeeee7",
-        "tonalRamp": [
-          "#0b0b08",
-          "#272722",
-          "#454540",
-          "#666660",
-          "#8a8a83",
-          "#aeaea8",
-          "#d1d1cc",
-          "#efefea"
-        ]
-      },
-      "surface-white": {
-        "role": "neutral",
-        "displayName": "Surface White",
-        "canonical": "#ffffff",
-        "tonalRamp": [
-          "#0b0b0b",
-          "#262626",
-          "#454545",
-          "#666666",
-          "#898989",
-          "#aeaeae",
-          "#d1d1d1",
-          "#eeeeee"
-        ]
-      },
-      "moss-ink": {
-        "role": "neutral",
-        "displayName": "Moss Ink",
-        "canonical": "#262b25",
-        "tonalRamp": [
-          "#090c08",
-          "#232823",
-          "#424740",
-          "#626861",
-          "#858b84",
-          "#aab0a9",
-          "#cdd3cc",
-          "#ebf0ea"
-        ]
-      },
-      "moss-gray": {
-        "role": "neutral",
-        "displayName": "Moss Gray",
-        "canonical": "#5b6157",
-        "tonalRamp": [
-          "#090c07",
-          "#242820",
-          "#42473e",
-          "#62685e",
-          "#858b81",
-          "#aab0a6",
-          "#cdd3ca",
-          "#ebf0e8"
-        ]
-      },
-      "hairline": {
-        "role": "neutral",
-        "displayName": "Hairline",
-        "canonical": "#dedfd7",
-        "tonalRamp": [
-          "#0b0c08",
-          "#262722",
-          "#45463f",
-          "#666760",
-          "#898a83",
-          "#aeafa8",
-          "#d1d2cb",
-          "#eeefe9"
-        ]
-      },
-      "input-line": {
-        "role": "neutral",
-        "displayName": "Input Line",
-        "canonical": "#d4d7ce",
-        "tonalRamp": [
-          "#0a0c07",
-          "#252721",
-          "#44463f",
-          "#65675f",
-          "#888a82",
-          "#acafa7",
-          "#d0d2cb",
-          "#edefe9"
-        ]
-      },
-      "alarm-red": {
-        "role": "neutral",
-        "displayName": "Alarm Red",
-        "canonical": "#a32136",
-        "tonalRamp": [
-          "#1e0003",
-          "#4e0212",
-          "#810e25",
-          "#b03041",
-          "#d95963",
-          "#fe8389",
-          "#ffbebe",
-          "#ffe8e8"
-        ]
-      }
+      "chicago-maroon": { "role": "primary", "displayName": "Chicago Maroon", "canonical": "#861f41", "tonalRamp": ["#3e0e1e", "#6c1934", "#99234a", "#c72e60", "#d95983", "#e48ba8", "#f0bdce", "#faeaf0"] },
+      "chicago-maroon-deep": { "role": "primary", "displayName": "Deep Maroon", "canonical": "#6f1936", "tonalRamp": ["#3e0e1e", "#6c1835", "#9a234b", "#c82d61", "#da5884", "#e58aa9", "#f0bcce", "#faeaf0"] },
+      "maroon-mist": { "role": "primary", "displayName": "Maroon Mist", "canonical": "#f5dce5", "tonalRamp": ["#3c1120", "#671d38", "#932a50", "#be3667", "#d26089", "#df90ac", "#edc0d0", "#f9ebf0"] },
+      "maroon-tint": { "role": "primary", "displayName": "Maroon Tint", "canonical": "#f5eeea", "tonalRamp": ["#342319", "#5a3c2b", "#80553d", "#a66f4f", "#bd8f75", "#d1b19e", "#e5d2c8", "#f7f1ee"] },
+      "selected-border": { "role": "primary", "displayName": "Selected Border", "canonical": "#dcc7cf", "tonalRamp": ["#2f1d24", "#52333f", "#744959", "#975e74", "#b18193", "#c8a7b4", "#e0cdd4", "#f5eff2"] },
+      "gap-amber": { "role": "secondary", "displayName": "Gap Amber", "canonical": "#eea75b", "tonalRamp": ["#452707", "#78440c", "#ab6112", "#de7e17", "#ec9c46", "#f2ba7e", "#f7d7b5", "#fdf3e8"] },
+      "ember": { "role": "secondary", "displayName": "Ember", "canonical": "#ce6a39", "tonalRamp": ["#3d1e0f", "#6a351a", "#974b25", "#c46131", "#d7845b", "#e3a98d", "#efcebe", "#faf0eb"] },
+      "amber-wash": { "role": "secondary", "displayName": "Amber Wash", "canonical": "#fff0df", "tonalRamp": ["#492804", "#7e4607", "#b36409", "#e9810c", "#f59f3d", "#f8bc77", "#fbd8b1", "#fef3e7"] },
+      "amber-ink": { "role": "secondary", "displayName": "Amber Ink", "canonical": "#8d4c1a", "tonalRamp": ["#41230c", "#703c15", "#9f561d", "#cf6f26", "#df9053", "#e9b186", "#f2d3ba", "#fbf1e9"] },
+      "buffer-amber": { "role": "secondary", "displayName": "Buffer Amber", "canonical": "#efd9b6", "tonalRamp": ["#3f2c0e", "#6d4c18", "#9b6c22", "#c98c2c", "#daa858", "#e5c28a", "#f0dcbc", "#faf4ea"] },
+      "buffer-cream": { "role": "secondary", "displayName": "Buffer Cream", "canonical": "#f7ebd5", "tonalRamp": ["#402e0c", "#6f5015", "#9f711e", "#ce9327", "#dead54", "#e8c687", "#f2deba", "#fbf5ea"] },
+      "sand-bar": { "role": "secondary", "displayName": "Sand Bar", "canonical": "#d8ad72", "tonalRamp": ["#3c2a11", "#68481d", "#946729", "#c08535", "#d3a25f", "#e0be8f", "#eddabf", "#f9f3eb"] },
+      "field-paper": { "role": "neutral", "displayName": "Field Paper", "canonical": "#f8f8f3", "tonalRamp": ["#30301c", "#545431", "#777746", "#9b9b5a", "#b4b47e", "#cacaa5", "#e1e1cb", "#f6f6ef"] },
+      "sage-panel": { "role": "neutral", "displayName": "Sage Panel", "canonical": "#eeeee7", "tonalRamp": ["#2d2d20", "#4e4e37", "#6e6e4e", "#8f8f66", "#aaaa88", "#c4c4ab", "#ddddcf", "#f4f4f0"] },
+      "surface-white": { "role": "neutral", "displayName": "Surface White", "canonical": "#fff", "tonalRamp": ["#262626", "#424242", "#5e5e5e", "#7a7a7a", "#999999", "#b8b8b8", "#d6d6d6", "#f2f2f2"] },
+      "accent-wash": { "role": "neutral", "displayName": "Accent Wash", "canonical": "#f1ebe6", "tonalRamp": ["#31251b", "#554130", "#795c44", "#9d7758", "#b6967c", "#ccb6a3", "#e2d5cb", "#f6f2ef"] },
+      "secondary-paper": { "role": "neutral", "displayName": "Secondary Paper", "canonical": "#f3f1eb", "tonalRamp": ["#302b1d", "#534b32", "#766a47", "#998a5c", "#b3a680", "#c9c1a6", "#e0dbcc", "#f5f4ef"] },
+      "moss-ink": { "role": "neutral", "displayName": "Moss Ink", "canonical": "#262b25", "tonalRamp": ["#242923", "#3f473d", "#5a6557", "#748471", "#94a191", "#b4bdb2", "#d4d9d3", "#f2f3f1"] },
+      "moss-ink-2": { "role": "neutral", "displayName": "Moss Ink 2", "canonical": "#52584e", "tonalRamp": ["#262924", "#42463e", "#5d6459", "#798273", "#989f93", "#b7bcb3", "#d6d9d4", "#f2f3f1"] },
+      "moss-gray": { "role": "neutral", "displayName": "Moss Gray", "canonical": "#5b6157", "tonalRamp": ["#262824", "#42463f", "#5d6359", "#798174", "#989f93", "#b7bbb4", "#d6d8d4", "#f2f3f2"] },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "#dedfd7", "tonalRamp": ["#292b22", "#484a3b", "#666954", "#85886d", "#a2a48e", "#bec0b0", "#dadbd2", "#f3f4f1"] },
+      "input-line": { "role": "neutral", "displayName": "Input Line", "canonical": "#d4d7ce", "tonalRamp": ["#282a22", "#45493c", "#626855", "#7f876e", "#9ca38f", "#babfb0", "#d8dad2", "#f3f4f1"] },
+      "saved-rule": { "role": "neutral", "displayName": "Saved Rule", "canonical": "#d6dace", "tonalRamp": ["#282c21", "#454c39", "#636c51", "#808b69", "#9ea78b", "#bbc2ae", "#d8dcd1", "#f3f4f0"] },
+      "event-rule": { "role": "neutral", "displayName": "Event Rule", "canonical": "#dce0d1", "tonalRamp": ["#2a2e1f", "#484f35", "#67714c", "#869263", "#a2ad85", "#bec6aa", "#dadece", "#f3f5f0"] },
+      "planner-rule": { "role": "neutral", "displayName": "Planner Rule", "canonical": "#dfe1d7", "tonalRamp": ["#2a2c21", "#484c39", "#666c51", "#858c69", "#a2a88a", "#bec2ad", "#dadcd0", "#f3f4f0"] },
+      "empty-dash": { "role": "neutral", "displayName": "Empty-State Dash", "canonical": "#c4cebb", "tonalRamp": ["#262c20", "#424d38", "#5e6e4f", "#798e67", "#98aa88", "#b7c3ac", "#d6ddd0", "#f2f4f0"] },
+      "skeleton-fill": { "role": "neutral", "displayName": "Skeleton Fill", "canonical": "#ecece4", "tonalRamp": ["#2d2d20", "#4e4e37", "#6f6f4e", "#909065", "#abab87", "#c4c4ab", "#ddddcf", "#f4f4f0"] },
+      "tick-minor": { "role": "neutral", "displayName": "Tick Minor", "canonical": "#b4baa9", "tonalRamp": ["#272a22", "#444a3b", "#616954", "#7e886d", "#9ca48e", "#babfb0", "#d8dbd2", "#f3f4f1"] },
+      "tick-major": { "role": "neutral", "displayName": "Tick Major", "canonical": "#7d8474", "tonalRamp": ["#272924", "#43473e", "#5f6458", "#7b8273", "#9aa092", "#b8bcb3", "#d7d9d4", "#f2f3f1"] },
+      "walk-sage": { "role": "tertiary", "displayName": "Walk Sage", "canonical": "#b9c4ac", "tonalRamp": ["#272d20", "#434e37", "#606e4e", "#7c8f66", "#9aaa88", "#b9c4ac", "#d7ddcf", "#f2f4f0"] },
+      "meadow-green": { "role": "tertiary", "displayName": "Meadow Green", "canonical": "#547246", "tonalRamp": ["#232f1d", "#3d5232", "#567548", "#70985d", "#90b181", "#b1c9a7", "#d3e0cc", "#f1f5ef"] },
+      "meadow-wash": { "role": "tertiary", "displayName": "Meadow Wash", "canonical": "#e6eddf", "tonalRamp": ["#26311c", "#425530", "#5e7944", "#7a9d58", "#99b67c", "#b8cca4", "#d6e2cb", "#f2f6ef"] },
+      "meadow-bar": { "role": "tertiary", "displayName": "Meadow Bar", "canonical": "#9aab90", "tonalRamp": ["#252c21", "#404b39", "#5b6b51", "#768b69", "#95a78b", "#b5c1ae", "#d5dcd1", "#f2f4f0"] },
+      "meadow-mist": { "role": "tertiary", "displayName": "Meadow Mist", "canonical": "#f1f3e9", "tonalRamp": ["#2d311b", "#4e562f", "#6f7a43", "#909e56", "#abb77b", "#c4cda3", "#dde2ca", "#f4f6ef"] },
+      "meadow-ink": { "role": "tertiary", "displayName": "Meadow Ink", "canonical": "#52633f", "tonalRamp": ["#272f1e", "#435134", "#607349", "#7c965f", "#9ab082", "#b8c7a8", "#d7dfcd", "#f2f5ef"] },
+      "alarm-red": { "role": "neutral", "displayName": "Alarm Red", "canonical": "#a32136", "tonalRamp": ["#400d15", "#6e1625", "#9d2034", "#cc2943", "#dd556b", "#e78898", "#f1bbc4", "#fbeaed"] },
+      "destructive-red": { "role": "neutral", "displayName": "Destructive Red", "canonical": "#aa2631", "tonalRamp": ["#3f0e12", "#6c181f", "#9a222c", "#c82d3a", "#da5863", "#e58a92", "#f0bcc1", "#faeaec"] }
     },
     "typographyMeta": {
-      "display": {
-        "displayName": "Display",
-        "purpose": "Page H1 only."
-      },
-      "numeral": {
-        "displayName": "Numeral",
-        "purpose": "The gap-minutes figure; card-level durations use the same idea at 26-30px."
-      },
-      "headline": {
-        "displayName": "Headline",
-        "purpose": "Place names on cards and panel headings."
-      },
-      "title": {
-        "displayName": "Title",
-        "purpose": "H3 subsections in the detail panel."
-      },
-      "body": {
-        "displayName": "Body",
-        "purpose": "Page body and intro copy."
-      },
-      "body-sm": {
-        "displayName": "Body Small",
-        "purpose": "The working size for form values, results copy and timeline steps."
-      },
-      "label": {
-        "displayName": "Label",
-        "purpose": "Field labels and summaries."
-      },
-      "caption": {
-        "displayName": "Caption",
-        "purpose": "Metadata, locations and estimate disclaimers."
-      }
+      "display": { "displayName": "Display", "purpose": "The page H1 (32px on phones)." },
+      "display-phone": { "displayName": "Display (phone)", "purpose": "H1 at 700px and below." },
+      "leave-numeral": { "displayName": "Leave numeral", "purpose": "The answer band's Leave-by time in Barlow Semi Condensed; the largest type on the page." },
+      "leave-numeral-phone": { "displayName": "Leave numeral (phone)", "purpose": "Leave-by time at 700px and below." },
+      "answer-name": { "displayName": "Answer name", "purpose": "The picked place in the answer band." },
+      "answer-name-phone": { "displayName": "Answer name (phone)", "purpose": "Place name at 700px and below." },
+      "stat-numeral": { "displayName": "Stat numeral", "purpose": "Minutes, walk and leave-by on comparison rows." },
+      "headline-section": { "displayName": "Section headline", "purpose": "Seat-reports heading and the topbar wordmark." },
+      "headline-results": { "displayName": "Results headline", "purpose": "Results heading; phone wordmark." },
+      "wordmark-footer": { "displayName": "Footer wordmark", "purpose": "Wordmark in the footer." },
+      "title-place": { "displayName": "Place title", "purpose": "Place name on a comparison row." },
+      "step-time": { "displayName": "Step time", "purpose": "Clock time in the four-step strip, Semi Condensed." },
+      "headline": { "displayName": "Headline", "purpose": "H2 default and the phone gap summary time range." },
+      "segment-numeral": { "displayName": "Segment numeral", "purpose": "Minutes printed inside the maroon settle-in segment." },
+      "title": { "displayName": "Title", "purpose": "H3, Ask heading, ruler end times, intro line." },
+      "body": { "displayName": "Body", "purpose": "Page text." },
+      "button": { "displayName": "Button", "purpose": "Primary and directions button label." },
+      "ui": { "displayName": "UI", "purpose": "Form values and results copy." },
+      "label": { "displayName": "Label", "purpose": "Field labels and summaries." },
+      "body-sm": { "displayName": "Body small", "purpose": "Facts, card actions, legends, step captions." },
+      "caption": { "displayName": "Caption", "purpose": "Metadata, disclaimers, tags." },
+      "caption-tight": { "displayName": "Caption tight", "purpose": "Gap-bar tools caption." },
+      "label-micro": { "displayName": "Label micro", "purpose": "Inline ESTIMATE tag beside the forecast heading." }
     },
-    "shadows": [
-      {
-        "name": "focus-ring",
-        "value": "0 0 0 3px rgba(134,31,65,.5)",
-        "purpose": "Keyboard focus ring on shadcn buttons and fields."
-      }
-    ],
+    "shadows": [],
     "motion": [
-      {
-        "name": "card-border",
-        "value": "border-color .2s",
-        "purpose": "Place card selection change."
-      },
-      {
-        "name": "control-state",
-        "value": "all .15s",
-        "purpose": "Hover and focus transitions on buttons and fields (shadcn default)."
-      },
-      {
-        "name": "smooth-scroll",
-        "value": "scrollIntoView({behavior:\"smooth\"})",
-        "purpose": "Jump to the route panel or the seat-report section on smaller screens."
-      }
+      { "name": "chevron-turn", "value": "transform 0.15s ease-out", "purpose": "Chevron rotation on disclosure summaries and the phone gap summary (rotate 45deg open, 180deg on the Change control)." },
+      { "name": "surface-change", "value": "background-color 0.2s, border-color 0.2s", "purpose": "Comparison row becoming active." },
+      { "name": "skeleton-pulse", "value": "skeleton-pulse 1.4s ease-in-out infinite", "purpose": "Loading skeleton opacity dips to 0.55; the only ambient animation." },
+      { "name": "smooth-scroll", "value": "scrollIntoView({ behavior: 'smooth' }), auto under prefers-reduced-motion", "purpose": "Moving to the answer, planner or seat reports." },
+      { "name": "reduced-motion", "value": "animation and transition durations 0.01ms", "purpose": "prefers-reduced-motion collapses all motion." }
     ],
     "breakpoints": [
-      {
-        "name": "phone",
-        "value": "700px"
-      },
-      {
-        "name": "tablet",
-        "value": "1120px"
-      },
-      {
-        "name": "wide",
-        "value": "1450px"
-      }
+      { "name": "wide", "value": "1180px (max-width: 1179px collapses)" },
+      { "name": "phone", "value": "700px (max-width: 700px)" },
+      { "name": "content-max", "value": "1240px" }
     ]
   },
   "components": [
@@ -383,135 +86,116 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Full-width maroon call to action in the planner; darkens on hover.",
-      "html": "<button class=\"ds-btn-primary\">Find my spot <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button>",
-      "css": ".ds-btn-primary{font-family:Arial,Helvetica,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;width:260px;height:46px;background:#861f41;color:#fff;border:0;border-radius:6px;font-size:15px;font-weight:500;cursor:pointer;transition:background .15s}.ds-btn-primary:hover{background:#6f1936}.ds-btn-primary:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(134,31,65,.5)}"
+      "description": "Find my spot: solid maroon, 44px, full width in the gap bar.",
+      "html": "<button class='ds-btn-primary'>Find my spot</button>",
+      "css": ".ds-btn-primary { height: 44px; width: 100%; padding: 0 22px; border: 0; border-radius: 6px; background: #861f41; color: #fff; font-family: Barlow, 'Segoe UI', Arial, sans-serif; font-size: 16px; font-weight: 600; white-space: nowrap; cursor: pointer; transition: background-color 0.2s; } .ds-btn-primary:hover { background: #6f1936; } .ds-btn-primary:focus-visible { outline: 2px solid #861f41; outline-offset: 3px; }"
     },
     {
-      "name": "Outline Button",
+      "name": "Directions Button",
       "kind": "button",
-      "refersTo": "button-outline",
-      "description": "Secondary action on white with a hairline border, used for saving and reporting.",
-      "html": "<button class=\"ds-btn-outline\">Save this gap</button>",
-      "css": ".ds-btn-outline{font-family:Arial,Helvetica,sans-serif;height:36px;padding:0 16px;background:#fff;color:#262b25;border:1px solid #dedfd7;border-radius:6px;font-size:14px;font-weight:500;cursor:pointer;transition:background .15s,color .15s}.ds-btn-outline:hover{background:#f1ebe6;color:#861f41}.ds-btn-outline:focus-visible{outline:none;border-color:#861f41;box-shadow:0 0 0 3px rgba(134,31,65,.5)}"
-    },
-    {
-      "name": "Route Link",
-      "kind": "custom",
-      "refersTo": "route-link",
-      "description": "The maroon slab that hands the walking route to Google Maps; the loudest element in the detail panel.",
-      "html": "<a class=\"ds-route-link\" href=\"#\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"3 11 22 2 13 21 11 13 3 11\"/></svg><span>Open walking directions<small>Start building → Newman Library → Next class · leave 12:00 PM</small></span><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a>",
-      "css": ".ds-route-link{font-family:Arial,Helvetica,sans-serif;display:flex;align-items:center;justify-content:space-between;gap:10px;width:300px;padding:12px 14px;background:#861f41;color:#fff;border-radius:7px;text-decoration:none}.ds-route-link>span{display:grid;flex:1;font-size:14px;font-weight:700}.ds-route-link small{margin-top:2px;font-size:11px;font-weight:400;line-height:1.35;color:#f5dce5}.ds-route-link:hover{background:#6f1936}.ds-route-link:focus-visible{outline:2px solid #861f41;outline-offset:4px}"
+      "refersTo": "directions-button",
+      "description": "The maroon slab under the place name that opens walking directions; the most prominent action.",
+      "html": "<a class='ds-directions' href='#'><span><b>Open walking directions</b><small>Opens in Maps, 6 min walk</small></span><svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M7 17 17 7M8 7h9v9'/></svg></a>",
+      "css": ".ds-directions { display: flex; align-items: center; justify-content: space-between; gap: 10px; max-width: 440px; padding: 12px 14px; border-radius: 8px; background: #861f41; color: #fff; text-decoration: none; font-family: Barlow, 'Segoe UI', Arial, sans-serif; transition: background-color 0.2s; } .ds-directions span { display: grid; flex: 1; } .ds-directions b { font-size: 16px; font-weight: 600; } .ds-directions small { margin-top: 2px; font-size: 13px; font-weight: 400; line-height: 1.35; color: #f5dce5; } .ds-directions:hover { background: #6f1936; } .ds-directions:focus-visible { outline: 2px solid #861f41; outline-offset: 4px; }"
     },
     {
       "name": "Field Input",
       "kind": "input",
       "refersTo": "field-input",
-      "description": "Label above a white 41px field with a hairline border; focus adds a maroon ring.",
-      "html": "<label class=\"ds-field\">Free from<input class=\"ds-input\" type=\"text\" value=\"12:00 PM\"></label>",
-      "css": ".ds-field{font-family:Arial,Helvetica,sans-serif;display:grid;gap:6px;width:240px;font-size:14px;font-weight:600;color:#52584e}.ds-input{font-family:Arial,Helvetica,sans-serif;height:41px;padding:3px 12px;background:#fff;color:#262b25;border:1px solid #d4d7ce;border-radius:6px;font-size:14px;outline:none;transition:border-color .15s,box-shadow .15s}.ds-input:focus-visible{border-color:#861f41;box-shadow:0 0 0 3px rgba(134,31,65,.5)}"
+      "description": "44px white field with a 15px 600 label above; native select and time inputs share the treatment.",
+      "html": "<label class='ds-field'>Class starts<input class='ds-input' type='text' value='2:00 PM'></label>",
+      "css": ".ds-field { display: grid; gap: 5px; font-family: Barlow, 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: #52584e; } .ds-input { height: 44px; padding: 0 12px; border: 1px solid #d4d7ce; border-radius: 6px; background: #fff; font: inherit; font-weight: 400; color: #262b25; outline: none; transition: border-color 0.2s, box-shadow 0.2s; } .ds-input:focus-visible { border-color: #861f41; box-shadow: 0 0 0 3px rgba(134, 31, 65, 0.5); }"
     },
     {
-      "name": "Place Card",
+      "name": "Gap Bar",
       "kind": "card",
-      "refersTo": "spot-card-selected",
-      "description": "White bordered card for one recommended place; the selected card swaps to a 1.5px maroon border with no real shadow.",
-      "html": "<article class=\"ds-card\"><div class=\"ds-head\"><div><h3 class=\"ds-name\">Newman Library</h3><p class=\"ds-loc\">Main level, Newman Library</p></div><span class=\"ds-best\">Best fit</span></div><div class=\"ds-metrics\"><div class=\"ds-main\"><strong>38</strong><span>minutes available</span></div><span>4-minute walk</span><span>Leave for class by <b>12:48 PM</b></span></div><div class=\"ds-bottom\"><span class=\"ds-tag\">Class activity: Low</span><span class=\"ds-seat\">Plenty of seats · student report</span><span>Open per published hours</span></div></article>",
-      "css": ".ds-card{font-family:Arial,Helvetica,sans-serif;width:340px;box-sizing:border-box;padding:17.5px 19.5px 12px;background:#fff;border:1.5px solid #861f41;border-radius:10px;color:#262b25}.ds-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.ds-best{padding:3px 8px;border-radius:4px;background:#861f41;color:#fff;font-size:12px;font-weight:700}.ds-tag{padding:3px 7px;border-radius:4px;background:#f1f3e9;color:#52633f;font-size:12px;font-weight:500;letter-spacing:0}.ds-name{margin:0;font-size:20px;font-weight:700;letter-spacing:-.5px;line-height:1.25}.ds-loc{margin:3px 0 0;font-size:13px;color:#5b6157}.ds-metrics{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;margin:14px 0 12px;font-size:13px;color:#52584e}.ds-main{display:flex;align-items:baseline;gap:6px}.ds-main strong{font-size:34px;letter-spacing:-1px;line-height:1;color:#861f41}.ds-main span{color:#5b6157}.ds-metrics b{color:#262b25}.ds-bottom{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding-top:11px;border-top:1px solid #edefe7;font-size:12px;color:#5b6157}.ds-seat{font-weight:700;color:#547246}"
+      "refersTo": "gap-bar",
+      "description": "One-row sage panel holding the gap inputs and the primary button.",
+      "html": "<div class='ds-gapbar'><label>From<div class='ds-box'>Newman Library</div></label><label>To<div class='ds-box'>Goodwin Hall</div></label><label>Free from<div class='ds-box'>12:50 PM</div></label><button class='ds-go'>Find my spot</button></div>",
+      "css": ".ds-gapbar { display: grid; grid-template-columns: repeat(3, 1fr) auto; gap: 12px; align-items: end; padding: 16px 20px 16px; border: 1px solid #dedfd7; border-radius: 12px; background: #eeeee7; font-family: Barlow, 'Segoe UI', Arial, sans-serif; } .ds-gapbar label { display: grid; gap: 5px; font-size: 15px; font-weight: 600; color: #52584e; } .ds-box { display: flex; align-items: center; height: 44px; padding: 0 12px; border: 1px solid #d4d7ce; border-radius: 6px; background: #fff; font-weight: 400; color: #262b25; } .ds-go { height: 44px; padding: 0 22px; border: 0; border-radius: 6px; background: #861f41; color: #fff; font: inherit; font-size: 16px; font-weight: 600; cursor: pointer; } .ds-go:hover { background: #6f1936; }"
     },
     {
-      "name": "Activity Tag",
+      "name": "Answer Band",
+      "kind": "card",
+      "refersTo": "answer-band",
+      "description": "White block with a 1.5px maroon border: place, Best-fit tag and the very large Leave-by time.",
+      "html": "<section class='ds-answer' tabindex='0'><div class='ds-left'><div class='ds-name'><h2>Newman Library, 2nd floor</h2><span class='ds-best'>Best fit</span></div><p class='ds-loc'>Newman Library, Virginia Tech</p></div><div class='ds-leave'><span>Leave by</span><strong>12:54 PM</strong><em>You settle in for 31 minutes</em></div></section>",
+      "css": ".ds-answer { display: grid; grid-template-columns: 1fr 260px; gap: 32px; align-items: start; padding: 26px 30px 22px; border: 1.5px solid #861f41; border-radius: 12px; background: #fff; font-family: Barlow, 'Segoe UI', Arial, sans-serif; color: #262b25; } .ds-answer:focus-visible { outline: 2px solid #861f41; outline-offset: 4px; } .ds-name { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; } .ds-name h2 { margin: 0; font-size: 36px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; } .ds-best { padding: 3px 9px; border-radius: 4px; background: #861f41; font-size: 13px; font-weight: 700; color: #fff; } .ds-loc { margin: 4px 0 0; font-size: 15px; color: #5b6157; } .ds-leave { display: grid; gap: 2px; } .ds-leave span { font-size: 15px; font-weight: 500; color: #5b6157; } .ds-leave strong { font-family: 'Barlow Semi Condensed', Barlow, 'Arial Narrow', Arial, sans-serif; font-size: 68px; font-weight: 700; letter-spacing: -0.02em; line-height: 1; color: #861f41; } .ds-leave em { margin-top: 6px; font-size: 16px; font-style: normal; color: #5b6157; }"
+    },
+    {
+      "name": "Gap Ruler",
+      "kind": "custom",
+      "refersTo": "answer-band",
+      "description": "The signature component: the gap to scale with walk segments, a maroon settle-in segment, a hatched buffer, an ink Leave marker, ticks and a legend.",
+      "html": "<div class='ds-ruler'><span class='ds-tag'>Leave by 12:54 PM</span><i class='ds-mark'></i><div class='ds-track'><div class='ds-seg ds-walk' style='flex-grow:6'></div><div class='ds-seg ds-stay' style='flex-grow:31'>31 min</div><div class='ds-seg ds-walk' style='flex-grow:8'></div><div class='ds-seg ds-buffer' style='flex-grow:5'></div></div><div class='ds-ticks'><i class='ds-maj' style='left:0'></i><i style='left:25%'></i><i class='ds-maj' style='left:50%'></i><i style='left:75%'></i><i class='ds-maj' style='left:100%'></i></div><div class='ds-ends'><span>12:50 PM</span><span>1:40 PM</span></div><ul class='ds-legend'><li><i class='ds-sw ds-walk'></i>Walking</li><li><i class='ds-sw ds-stay'></i>Settle in</li><li><i class='ds-sw ds-buffer'></i>Buffer</li></ul></div>",
+      "css": ".ds-ruler { position: relative; padding-top: 34px; font-family: Barlow, 'Segoe UI', Arial, sans-serif; } .ds-tag { position: absolute; top: 0; left: 8%; padding: 3px 10px; border-radius: 4px; background: #262b25; font-size: 14px; font-weight: 600; white-space: nowrap; color: #fff; } .ds-mark { position: absolute; top: 22px; bottom: 60px; left: 12%; z-index: 1; width: 2px; background: #262b25; } .ds-track { display: flex; height: 48px; overflow: hidden; border-radius: 8px; } .ds-seg { flex-basis: 0; min-width: 0; } .ds-seg + .ds-seg { border-left: 2px solid #fff; } .ds-walk { background: #b9c4ac; } .ds-stay { display: flex; align-items: center; padding: 0 14px; background: #861f41; font-family: 'Barlow Semi Condensed', Barlow, 'Arial Narrow', Arial, sans-serif; font-size: 19px; font-weight: 600; color: #fff; } .ds-buffer { background: repeating-linear-gradient(135deg, #efd9b6 0 4px, #f7ebd5 4px 9px); } .ds-ticks { position: relative; height: 9px; margin-top: 4px; } .ds-ticks i { position: absolute; top: 0; width: 1px; height: 5px; background: #b4baa9; } .ds-ticks i.ds-maj { height: 9px; background: #7d8474; } .ds-ends { display: flex; justify-content: space-between; margin-top: 2px; font-family: 'Barlow Semi Condensed', Barlow, 'Arial Narrow', Arial, sans-serif; font-size: 17px; font-weight: 600; color: #52584e; } .ds-legend { display: flex; flex-wrap: wrap; gap: 4px 20px; margin: 12px 0 0; padding: 0; list-style: none; font-size: 14px; color: #52584e; } .ds-legend li { display: inline-flex; align-items: center; gap: 7px; } .ds-sw { display: inline-block; width: 14px; height: 14px; border-radius: 3px; }"
+    },
+    {
+      "name": "Comparison Row",
+      "kind": "card",
+      "refersTo": "place-row",
+      "description": "Aligned row with place, minutes, walk and leave-by numerals and a card-action row; the active row takes the maroon tint.",
+      "html": "<div class='ds-row ds-active'><div><h3 class='ds-place'>Newman Library, 2nd floor</h3><p class='ds-loc2'>Newman Library</p></div><div class='ds-stat ds-min'><strong>31</strong><span>min to settle</span></div><div class='ds-stat'><strong>6</strong><span>min walk</span></div><div class='ds-stat'><strong>12:54</strong><span>leave by</span></div><div class='ds-actions'><button>Show plan</button><button>Save</button></div></div>",
+      "css": ".ds-row { display: grid; grid-template-columns: minmax(0, 1fr) 96px 76px 108px; gap: 4px 18px; align-items: start; padding: 16px 20px 6px; border: 1px solid #dedfd7; border-radius: 10px; background: #fff; font-family: Barlow, 'Segoe UI', Arial, sans-serif; color: #262b25; transition: background-color 0.2s, border-color 0.2s; } .ds-row.ds-active { border-color: #dcc7cf; background: #f5eeea; } .ds-place { margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; } .ds-active .ds-place { color: #861f41; } .ds-loc2 { margin: 4px 0 0; font-size: 15px; color: #5b6157; } .ds-stat strong { display: block; font-family: 'Barlow Semi Condensed', Barlow, 'Arial Narrow', Arial, sans-serif; font-size: 30px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.05; white-space: nowrap; color: #262b25; } .ds-stat.ds-min strong { color: #861f41; } .ds-stat span { font-size: 13px; white-space: nowrap; color: #5b6157; } .ds-actions { display: flex; grid-column: 1 / -1; gap: 0 4px; margin: 4px -10px 0; } .ds-actions button { height: 40px; padding: 0 10px; border: 0; background: none; font: inherit; font-size: 14px; font-weight: 500; color: #52584e; cursor: pointer; } .ds-actions button:first-child { color: #861f41; } .ds-actions button:focus-visible { outline: 2px solid #861f41; outline-offset: 3px; border-radius: 4px; }"
+    },
+    {
+      "name": "Activity Tags",
       "kind": "chip",
       "refersTo": "activity-tag",
-      "description": "Small 4px-radius tag for class-change activity; calm is meadow, high is amber. Always carries words.",
-      "html": "<span class=\"ds-tag-low\">Class activity: Low</span> <span class=\"ds-tag-high\">Class activity: High</span>",
-      "css": ".ds-tag-low,.ds-tag-high{font-family:Arial,Helvetica,sans-serif;display:inline-block;padding:3px 7px;border-radius:4px;font-size:12px;font-weight:500}.ds-tag-low{background:#f1f3e9;color:#52633f}.ds-tag-high{background:#fff0df;color:#8d4c1a}"
+      "description": "Calm and high class-activity tags; state is carried by words as well as color.",
+      "html": "<span class='ds-tag-low'>Class activity: Low</span> <span class='ds-tag-high'>Class activity: High</span>",
+      "css": ".ds-tag-low, .ds-tag-high { display: inline-block; padding: 2px 8px; border-radius: 4px; font-family: Barlow, 'Segoe UI', Arial, sans-serif; font-size: 13px; font-weight: 600; } .ds-tag-low { background: #f1f3e9; color: #52633f; } .ds-tag-high { background: #fff0df; color: #8d4c1a; }"
     },
     {
-      "name": "Route Timeline",
-      "kind": "custom",
-      "refersTo": "spot-card",
-      "description": "Signature vertical timeline: leave, settle in, head to class, class starts. The settle-in step is maroon.",
-      "html": "<ol class=\"ds-timeline\"><li><span>12:00 PM</span><div>Leave Start building<small>About 4 min to your spot</small></div></li><li class=\"ds-main\"><span>12:04 PM</span><div>Settle in for 38 minutes<small>A pocket of time to make progress.</small></div></li><li><span>12:42 PM</span><div>Head to next class<small>About 6 min walking · 5 min buffer</small></div></li><li><span>1:00 PM</span><div>Next class starts</div></li></ol>",
-      "css": ".ds-timeline{font-family:Arial,Helvetica,sans-serif;width:300px;margin:0;padding:0;list-style:none;color:#262b25}.ds-timeline li{display:grid;grid-template-columns:69px 1fr;gap:10px;padding-bottom:20px;font-size:14px}.ds-timeline li>span{padding-top:2px;font-size:12px;color:#58634b}.ds-timeline li>div{position:relative;padding-left:14px;border-left:1px solid #d0d6c5}.ds-timeline li>div:before{content:'';position:absolute;left:-4px;top:5px;width:7px;height:7px;border-radius:50%;background:#a9b39c}.ds-timeline .ds-main>div{color:#861f41;font-weight:700}.ds-timeline .ds-main>div:before{background:#861f41}.ds-timeline small{display:block;margin-top:3px;font-size:12px;font-weight:400;color:#616c54}"
-    },
-    {
-      "name": "Forecast Bars",
-      "kind": "custom",
-      "refersTo": "activity-tag",
-      "description": "Seven-bar class-change activity estimate on a sage panel; always paired with an ESTIMATE tag.",
-      "html": "<div class=\"ds-forecast\"><div class=\"ds-fhead\"><h3>Expected class-change activity</h3><span>ESTIMATE</span></div><div class=\"ds-bars\"><div><i style=\"height:10px;background:#9aab90\"></i><small>12:04</small></div><div><i style=\"height:16px;background:#9aab90\"></i><small></small></div><div><i style=\"height:34px;background:#d8ad72\"></i><small></small></div><div><i style=\"height:52px;background:#ce6a39\"></i><small>12:23</small></div><div><i style=\"height:30px;background:#d8ad72\"></i><small></small></div><div><i style=\"height:14px;background:#9aab90\"></i><small></small></div><div><i style=\"height:8px;background:#9aab90\"></i><small>12:42</small></div></div><p>Estimated activity from classes, not total crowds.</p></div>",
-      "css": ".ds-forecast{font-family:Arial,Helvetica,sans-serif;width:300px;box-sizing:border-box;padding:16px;background:#efefe7;border-radius:8px;color:#262b25}.ds-fhead{display:flex;align-items:center;justify-content:space-between;gap:5px;margin-bottom:12px}.ds-fhead h3{margin:0;font-size:14px;font-weight:700}.ds-fhead span{font-size:9px;letter-spacing:1px;color:#626e52}.ds-bars{display:flex;gap:8px;align-items:flex-end;height:86px}.ds-bars>div{display:flex;flex:1;flex-direction:column;justify-content:flex-end;min-width:0;height:100%}.ds-bars i{display:block;border-radius:3px 3px 0 0}.ds-bars small{height:15px;margin-top:4px;font-size:10px;color:#637151}.ds-forecast p{margin:10px 0 0;font-size:12px;color:#626a5b;line-height:1.5}"
-    },
-    {
-      "name": "Topbar Wordmark",
-      "kind": "nav",
-      "refersTo": "route-link",
-      "description": "The only navigation: a white topbar with the maroon logo tile, wordmark and a data-notes link.",
-      "html": "<header class=\"ds-top\"><a class=\"ds-word\" href=\"#\"><span class=\"ds-logo\">h<span>g</span></span>hokiegap</a><a class=\"ds-src\" href=\"#\">About the data <svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a></header>",
-      "css": ".ds-top{font-family:Arial,Helvetica,sans-serif;display:flex;align-items:center;justify-content:space-between;width:420px;height:72px;padding:0 24px;background:#fff;border-bottom:1px solid #dce0d7;box-sizing:border-box}.ds-word{display:flex;gap:10px;align-items:center;font-size:25px;font-weight:800;letter-spacing:-1px;color:#262b25;text-decoration:none}.ds-logo{width:36px;height:36px;border-radius:9px;background:#861f41;color:#fff;text-align:center;line-height:32px;font-size:27px;letter-spacing:0}.ds-logo span{color:#eea75b}.ds-src{display:flex;gap:6px;align-items:center;font-size:14px;color:#656b61;text-decoration:none}.ds-src:hover{text-decoration:underline}.ds-src:focus-visible,.ds-word:focus-visible{outline:2px solid #861f41;outline-offset:4px}"
+      "name": "Forecast Panel",
+      "kind": "card",
+      "refersTo": "forecast-panel",
+      "description": "Sage panel with seven equal bars colored by class-change activity and an inline ESTIMATE label.",
+      "html": "<div class='ds-forecast'><div class='ds-fhead'><h3>Expected class-change activity</h3><span>ESTIMATE</span></div><div class='ds-bars'><div><i style='height:20%'></i></div><div><i style='height:30%'></i></div><div><i class='ds-mid' style='height:55%'></i></div><div><i class='ds-hi' style='height:80%'></i></div><div><i class='ds-mid' style='height:50%'></i></div><div><i style='height:25%'></i></div><div><i style='height:15%'></i></div></div></div>",
+      "css": ".ds-forecast { padding: 16px; border-radius: 10px; background: #eeeee7; font-family: Barlow, 'Segoe UI', Arial, sans-serif; color: #262b25; } .ds-fhead { display: flex; align-items: center; justify-content: space-between; gap: 8px; } .ds-fhead h3 { margin: 0; font-size: 16px; font-weight: 700; } .ds-fhead span { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #52584e; } .ds-bars { display: flex; align-items: flex-end; gap: 8px; height: 86px; margin-top: 10px; } .ds-bars div { display: flex; flex: 1; flex-direction: column; justify-content: flex-end; height: 100%; } .ds-bars i { display: block; border-radius: 3px 3px 0 0; background: #9aab90; } .ds-bars i.ds-mid { background: #d8ad72; } .ds-bars i.ds-hi { background: #ce6a39; }"
     }
   ],
   "narrative": {
     "northStar": "The Between-Class Timetable",
-    "overview": "HokieGap looks like a calm campus departure board. The student arrives in a hurry, with a number in mind: the minutes between one class and the next. The interface answers with timing first. The big gap-minutes figure, the leave-by clock time and the \"minutes available\" count are the largest, boldest things on the page. Everything else is quiet warm paper and hairlines so those numbers can be read at a glance on a phone between buildings.\n\nThe mood is calm, honest and friendly to someone in a hurry. Surfaces are pale and slightly green-tinted, text is plain-language, and every heuristic wears an \"ESTIMATE\" tag rather than pretending to be live. One color acts. Chicago Maroon marks the primary action, the selected place, the leave-by number and links, and nothing decorative competes with it. Depth comes from tonal layers (paper, sage panel, white card) and 1px borders, not from shadows.\n\nThe system visually rejects gamified campus-app gloss, fake-live indicators and crowd-heatmap drama. Colors that suggest status (green, amber) are reserved for what the data actually says and never dress up guesses as measurements.",
+    "overview": "HokieGap is a calm campus departure board that draws the gap between two classes to scale. The student arrives in a hurry with a number in mind, the minutes until the next class, and the page answers it once: one place, one very large Leave-by time, and a ruler that shows the whole gap as lengths of time. Everything else (the comparison rows, the forecast, the inputs) is quiet warm paper and hairlines so the answer reads at a glance on a phone between buildings.\n\nThe mood is calm, honest and friendly to someone in a hurry. Surfaces are pale and faintly green-tinted, copy is plain-language, and every heuristic wears an \"ESTIMATE\" tag or a caption rather than posing as live data. One color acts: Chicago Maroon marks the primary action, the answer band's border, the settle-in segment, the leave-by numeral and links. Depth is tonal (paper, sage panel, white block) plus hairline borders, with no shadows. Time is the material: the ruler uses tick marks, a solid maroon settle-in segment, sage walking segments and a hatched buffer segment, and that vocabulary is the system's one signature.\n\nThe system visually rejects gamified campus-app gloss, fake-live indicators, crowd-heatmap drama, eyebrows above headings and real drop shadows. Status colors (meadow green, amber) are reserved for what the data actually says.",
     "keyCharacteristics": [
-      "Timing numerals lead; labels and prose recede.",
-      "One action color (Chicago Maroon) used sparingly against warm, green-tinted neutrals.",
-      "Flat and precise: hairline-bordered white cards on paper, 6 to 12px radii, no real shadows.",
-      "Numbered steps (01, 02, 03) turn the planner into a left-to-right procedure: your gap, places that fit, your route.",
-      "Estimates are labeled as estimates, in small caps tags and caption text.",
-      "System Arial throughout; no custom typeface is loaded."
+      "The Answer Board: intro row, one-row gap bar, a maroon-bordered answer band, then aligned comparison rows with a \"About this pick\" aside.",
+      "Times and minutes are set in Barlow Semi Condensed; prose and labels in Barlow. Both self-hosted.",
+      "One action color (Chicago Maroon) against warm, green-tinted neutrals.",
+      "Flat and precise: hairline-bordered white blocks on paper, 4 to 12px radii, no box shadows.",
+      "Selection is a border; focus is a maroon outline or ring.",
+      "Estimates are labeled as estimates."
     ],
     "rules": [
-      {
-        "name": "The One Action Color Rule",
-        "body": "Chicago Maroon is the only color that asks the student to do something. Amber and green describe data; they never appear on buttons.",
-        "section": "colors"
-      },
-      {
-        "name": "The Tinted Neutral Rule",
-        "body": "Neutrals carry a faint yellow-green tint (paper, sage, moss). Do not introduce pure white backgrounds beside them except for raised surfaces (cards, topbar, fields), and never pure black text.",
-        "section": "colors"
-      },
-      {
-        "name": "The No False Status Rule",
-        "body": "Green and amber appear only where the data says so (seat reports, class-change activity). Never use them as decoration or to suggest availability the product cannot know.",
-        "section": "colors"
-      },
-      {
-        "name": "The Numbers Lead Rule",
-        "body": "The largest, tightest type on any screen is a duration or a clock time. Headlines describe; numerals decide.",
-        "section": "typography"
-      },
-      {
-        "name": "The Small-Caps Honesty Rule",
-        "body": "Every heuristic, forecast or snapshot gets a small uppercase tag or a caption saying what it is. Estimates are never set in the same voice as facts.",
-        "section": "typography"
-      },
-      {
-        "name": "The Flat-By-Default Rule",
-        "body": "Surfaces are flat at rest. Selection and focus show up as borders and rings, not shadows.",
-        "section": "elevation"
-      }
+      { "name": "The One Action Color Rule", "body": "Chicago Maroon is the only color that asks the student to do something. Amber and green describe data; they never appear on buttons.", "section": "colors" },
+      { "name": "The Tinted Neutral Rule", "body": "Neutrals carry a faint yellow-green tint (paper, sage, moss). Pure white is only for raised surfaces (blocks, topbar, fields), never pure black text.", "section": "colors" },
+      { "name": "The No False Status Rule", "body": "Green and amber appear only where the data says so (seat reports, class-change activity, a buffer). Never use them to suggest availability the product cannot know.", "section": "colors" },
+      { "name": "The Sage Ground Rule", "body": "Hairline variants exist in the build (saved-rule, event-rule, planner-rule, empty-dash, skeleton-fill, tick-minor, tick-major). They are documented because they ship; new work uses Hairline or Input Line instead of minting another neutral.", "section": "colors" },
+      { "name": "The Numbers Lead Rule", "body": "The largest, tightest type on any screen is a duration or a clock time, and it is set in the semi-condensed cut. Headlines describe; numerals decide.", "section": "typography" },
+      { "name": "The Estimate Voice Rule", "body": "Every heuristic, forecast or snapshot carries an \"ESTIMATE\" tag or a caption saying what it is, sitting beside or below its heading, never above it.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest. Selection and focus show up as borders, outlines and rings, never shadows.", "section": "elevation" }
     ],
     "dos": [
-      "**Do** use Chicago Maroon (#861f41) as the only action color and keep it to primary actions, selected states, the leave-by numeral and links.",
-      "**Do** lead with durations and clock times in the largest, tightest type on the screen.",
-      "**Do** tag every estimate or snapshot with an uppercase \"ESTIMATE\" label or a caption saying what it is, in the voice already used (\"Estimated activity from classes, not total crowds\").",
-      "**Do** express depth with tonal layers (Field Paper, Sage Panel, Surface White) and 1px hairlines (#dedfd7).",
-      "**Do** carry meaning in text as well as color: class activity tags, seat reports and errors always include words.",
-      "**Do** keep touch targets at least 42px tall on phones (card actions) and 41 to 46px for form controls."
+      "Do use Chicago Maroon (#861f41) as the only action color, on primary actions, the answer band border, selected state, the settle-in segment and the Leave-by numeral.",
+      "Do set every time, minute count and numeral in Barlow Semi Condensed, and let the Leave-by time be the largest type on the page (68px, 56px on phones).",
+      "Do draw durations to scale: ruler segment widths are proportional to minutes.",
+      "Do tag every estimate or snapshot with \"ESTIMATE\" or a caption saying what it is, beside or below its heading.",
+      "Do express depth with tonal layers (Field Paper, Sage Panel, Surface White) and 1px hairlines (#dedfd7).",
+      "Do carry meaning in words as well as color: tags, seat reports and errors always include text.",
+      "Do keep form controls and primary buttons at 44px, and card actions at 40px (44px on phones).",
+      "Do put the answer band immediately after the gap on phones, and move the Ask card below it.",
+      "Do honor prefers-reduced-motion: transitions and animation collapse to near zero and smooth scrolling turns off."
     ],
     "donts": [
-      "**Don't** put an eyebrow or kicker label above a heading. The heading carries its own weight.",
-      "**Don't** add gamified campus-app gloss: badges, streaks, confetti or leaderboards.",
-      "**Don't** use live indicators, pulsing dots or \"now\" styling for data that is a snapshot or a heuristic.",
-      "**Don't** design crowd-heatmap drama: no red-to-green gradients or dense heat overlays for the class-change forecast.",
-      "**Don't** use amber or green as decoration or as action colors; they mean \"class activity\" and \"student seat report\" and nothing else.",
-      "**Don't** introduce real drop shadows for depth. Selection is a 1.5px maroon border; focus is a ring.",
-      "**Don't** use pure black text or pure white page backgrounds; the neutrals carry the faint moss tint.",
-      "**Don't** make cards pill-shaped or fully rounded; the largest container radius is 12px, and only step badges and dots are circles."
+      "Don't put an eyebrow or kicker above a heading. The heading carries its own weight.",
+      "Don't add gamified campus-app gloss: badges, streaks, confetti or leaderboards.",
+      "Don't use live indicators, pulsing dots or \"now\" styling on snapshot or heuristic data. The only animation is the skeleton pulse while loading.",
+      "Don't design crowd-heatmap drama: no red-to-green gradients or dense heat overlays.",
+      "Don't use amber or green as decoration or as action colors.",
+      "Don't introduce real drop shadows for depth. Selection is a border; focus is an outline or ring.",
+      "Don't use pure black text or off-palette grays; there is one secondary gray (#5b6157).",
+      "Don't make blocks pill-shaped; the largest radius is 12px and only the status dot is a circle.",
+      "Don't revert to system Arial or set times in the text face; Barlow and Barlow Semi Condensed are the only faces."
     ]
   }
 }
