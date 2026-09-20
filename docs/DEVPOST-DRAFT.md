@@ -21,7 +21,7 @@ Class capacity is not attendance, and nearby class dismissals do not directly re
 The immediate value is helping students make a feasible choice quickly. Next steps are verified indoor locations and dining hours, observation-based calibration, broader timetable coverage and usability testing with students. We have not yet demonstrated real-world forecast accuracy or university adoption.
 
 ## Attribution and honest scope
-Built with AI coding assistance (Codex), external React/Vinext/Sites scaffolding and UI libraries. Dependencies are listed in package.json; dataset sources and assumptions are in docs/DATA.md. Team-specific contributions include the campus gap workflow, data curation, timing rules, class-change heuristic, report workflow and agent integration. Record both contributors' actual work and any work performed outside the official hacking period. Add real testing feedback only after it is collected.
+Built with AI coding assistance (OpenAI Codex and Claude Code), external React/Vinext scaffolding and UI libraries, hosted on Cloudflare Workers + D1. Dependencies are listed in package.json; dataset sources and assumptions are in docs/DATA.md. Team-specific contributions include the campus gap workflow, data curation, timing rules, class-change heuristic, report workflow and agent integration. Record both contributors' actual work and any work performed outside the official hacking period. Add real testing feedback only after it is collected.
 
 ## Before submitting
 - Add both contributors and choose at least one VTHacks category.

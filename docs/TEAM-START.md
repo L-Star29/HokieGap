@@ -2,7 +2,7 @@
 
 Repository: https://github.com/L-Star29/HokieGap
 
-Main local project: `C:\Users\lokir\Documents\Codex\HokieGap`. The earlier date/message folders were Codex's task storage; `work` held research and temporary files. They are not part of the application. Use this project folder from now on.
+Work from a fresh clone of the repository; do not rely on any other local copy.
 
 ## Teammate setup
 
@@ -43,4 +43,4 @@ Create a feature branch for each person's work and open a pull request. Avoid ed
 | docs/SPONSOR-SETUP.md | Sponsor requirements, credentials and evidence |
 | docs/HOKIEAI-SIDEKICK.md | Standalone Side Kick instructions and post draft |
 
-GitHub is code hosting. The live app is hosted separately. The owner explicitly approved public access to the existing Sites URL. This does not make API keys public, and visitors do not need a HokieGap/ChatGPT account for the app's planner. If moving hosting, keep the server API and provision the D1 database; GitHub Pages alone is insufficient.
+GitHub is code hosting only. The live app runs on Cloudflare Workers + D1; follow [DEPLOY.md](DEPLOY.md). Secrets live in Cloudflare (`wrangler secret put`) and in each developer's git-ignored `.dev.vars`, never in the repo. GitHub Pages alone is insufficient because the app needs a server API and a database.

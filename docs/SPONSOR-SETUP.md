@@ -4,7 +4,8 @@
 
 - MLH categories: optional, no category limit; choose only integrations actually demonstrated.
 - VTHacks categories: choose at least one. Consider Best First-Time Hack if every applicable eligibility condition is met, and Ut Prosim for student usefulness.
-- Sponsor challenges: up to three. Intended: Deloitte + Databricks and Cloudforce. Gemini is MLH and does not consume a sponsor slot. The third sponsor slot is deliberately unfilled until a relevant challenge is justified.
+- Sponsor challenges: up to three. Intended: Deloitte x Databricks ("AI Agent for the Virginia Tech Student Experience": smart campus / campus life hub) and Cloudforce ("HokieAI Side Kick": a standalone HokieAI experience plus a post). Gemini is MLH and does not consume a sponsor slot.
+- Third sponsor slot: GoDaddy is the only realistic fit. Its "Best Domain Name" track (code `MLH0918VTH`) needs only a custom domain pointed at the deployed app (see DEPLOY.md), and the same registry offer is an MLH category that costs no sponsor slot. Its other track, "Best Use of ANS" (agents discovering each other over the open web), is a real build; do not select it without implementing it. Capital One (Nessie banking API), Impiricus (healthcare-professional engagement), Peraton (mission-critical AI) and Procedura (photo to 3D building) do not fit HokieGap. Leaving the slot empty is better than a claim the demo cannot support.
 
 ## Gemini: server-side API
 
@@ -12,17 +13,17 @@ The project ID/number is not an API credential. In Google AI Studio, import the 
 
 The application invokes Gemini function calling to select activity/walk preferences, executes `find_campus_options`, validates timing with the planner, then asks Gemini to select and explain an option from the returned IDs. It rejects invented destinations. Without Databricks credentials, evidence is explicitly labeled `Bundled campus snapshot`. It is not a trained occupancy model.
 
-Run `node --env-file=.dev.vars scripts/check-agent.mjs` for a real, synthetic-example smoke test. Enable `AGENT_ENABLED=true` only after successful testing and database migration. Public AI requests have a global limit of 20 per hour (up to two model requests per plan). Configure a provider-side budget as appropriate. The host must also receive secrets; local `.dev.vars` does not configure hosted production.
+Run `node --env-file=.dev.vars scripts/check-agent.mjs` for a real, synthetic-example smoke test. Public AI requests have a global limit of 20 per hour (up to two model requests per plan). Configure a provider-side budget as appropriate. The host must also receive secrets (`npx wrangler secret put GEMINI_API_KEY`; see DEPLOY.md); local `.dev.vars` does not configure hosted production. `npm run check:agent` runs the same smoke test.
 
 ## Deloitte + Databricks
 
 Workspace host: https://dbc-31de3f1b-fd1c.cloud.databricks.com
 
-1. In your usual signed-in Databricks browser, import `databricks/01_load_campus.ipynb` into Workspace. Select serverless compute and run it. Set `CATALOG` to a catalog you can write to if `workspace` is unavailable. The notebook creates/replaces only HokieGap tables in the selected schema.
+1. In your usual signed-in Databricks browser, import `databricks/01_load_campus.ipynb` into Workspace (Workspace > Create/Import). Select serverless compute and Run all. Set `CATALOG` to a catalog you can write to if `workspace` is unavailable. The notebook creates/replaces only HokieGap tables in the selected schema: `campus_datasets` (what the app queries), typed `scheduled_classes`, `buildings`, `spaces`, and a `building_class_load` view. Its last cells assert that `campus_datasets` holds all four datasets. (An earlier version crashed on the all-null `enrollment` column; regenerate with `npm run notebook` if you edit data.)
 2. Open SQL Warehouses and select a running warehouse. Copy its warehouse ID from Connection details (the HTTP path ends with the ID). Set `DATABRICKS_WAREHOUSE_ID` in `.dev.vars`.
 3. Configure an API credential allowed by your workspace. If personal access tokens are enabled: user Settings > Developer > Access tokens > Manage > Generate new token. Give it a short expiry and save it only as `DATABRICKS_TOKEN` in `.dev.vars`. If tokens are disabled, use the workspace's supported OAuth setup; do not change admin policy merely to get around that restriction.
 4. Match `DATABRICKS_CATALOG` and `DATABRICKS_SCHEMA` to the notebook. Keep the host without a `/browse` path.
-5. Re-run the agent smoke test. A successful sponsor demonstration must show `Databricks SQL warehouse`, real returned options, and successful query execution in the workspace. A configured-but-failing workspace produces an error, not silent local fallback.
+5. Run `npm run check:databricks`. It prints `OK  source: Databricks SQL warehouse` and the row counts, or the exact failure. Then run `npm run check:agent`. A successful sponsor demonstration must show `Databricks SQL warehouse`, real returned options, and successful query execution in the workspace. A configured-but-failing workspace produces an error, not silent local fallback.
 
 Do not claim the challenge is satisfied merely because the notebook exists or because the AI Dev Kit is installed. The complete path must run. Obtain official sponsor rules and confirm any sponsor-specific entry requirement. The supplied challenge's Campus life intelligence hub is the primary fit; data-backed space utilization is a secondary benefit.
 

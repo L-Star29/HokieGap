@@ -1,0 +1,34 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "hokiegap",
+  // Must not be newer than the workerd bundled with the pinned wrangler (2026-05-22),
+  // or `npm run dev` fails to start.
+  "compatibility_date": "2026-05-22",
+  "compatibility_flags": ["nodejs_compat"],
+
+  // Seating reports + the AI hourly request budget. Create it once with
+  //   npx wrangler d1 create hokiegap-db
+  // then paste the printed database_id below. IDs are not secrets.
+  // Local `npm run dev` does not need a real ID.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "hokiegap-db",
+      "database_id": "e0baf7d4-dc0e-444b-a26b-6bd7a380f892",
+      "migrations_dir": "drizzle"
+    }
+  ],
+
+  // Non-secret settings. Secrets (GEMINI_API_KEY, DATABRICKS_TOKEN) are NOT
+  // stored here: use `npx wrangler secret put <NAME>` for production and
+  // `.dev.vars` for local development.
+  "vars": {
+    "AGENT_ENABLED": "true",
+    "GEMINI_MODEL": "gemini-3.6-flash",
+    "DATABRICKS_HOST": "https://dbc-31de3f1b-fd1c.cloud.databricks.com",
+    "DATABRICKS_CATALOG": "workspace",
+    "DATABRICKS_SCHEMA": "hokiegap",
+    // Copy from Databricks > SQL Warehouses > (your warehouse) > Connection details.
+    "DATABRICKS_WAREHOUSE_ID": "e88759fd1cb05add"
+  }
+}

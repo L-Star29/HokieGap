@@ -41,10 +41,11 @@ yarn-error.log*
 next-env.d.ts
 /dist/
 /.wrangler/
-# Checkout-local execution profile and tool state; never publish them.
-/.sites-runtime/
+# Local AI-assistant and tool state; never publish it.
 /.agents/
 /.codex/
+/.claude/
+/.openai/
 /outputs/
 /work/
 *.tsbuildinfo
