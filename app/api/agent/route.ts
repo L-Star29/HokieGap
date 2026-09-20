@@ -17,7 +17,7 @@ export async function POST(request:Request){
  try{
   const db=storage();
   // Shared, conservative project-wide quota prevents runaway public model calls.
-  const used=await db.prepare("INSERT INTO agent_budget (bucket, count) VALUES (?, 1) ON CONFLICT(bucket) DO UPDATE SET count=count+1 WHERE count<20 RETURNING count").bind(Math.floor(Date.now()/3600000)).all();
+  const used=await db.prepare("INSERT INTO agent_budget (bucket, count) VALUES (?, 1) ON CONFLICT(bucket) DO UPDATE SET count=count+1 WHERE count<60 RETURNING count").bind(Math.floor(Date.now()/3600000)).all();
   if(!used.results.length)return Response.json({error:'The AI planner has reached its hourly demo limit. The manual planner still works.'},{status:429,headers});
   await db.prepare('DELETE FROM agent_budget WHERE bucket < ?').bind(Math.floor(Date.now()/3600000)-24).run();
   const reports=await db.prepare('SELECT space_id AS spaceId, level, created_at AS createdAt FROM reports WHERE created_at > ? ORDER BY created_at DESC LIMIT 300').bind(Date.now()-900000).all();

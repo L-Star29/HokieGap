@@ -23,14 +23,52 @@ export async function loadCampus(c:AgentConfig,local:Data,fetcher:Fetcher=fetch)
  return {data:dataset,source:'Databricks SQL warehouse'};
 }
 
+// Thrown when Gemini is overloaded (429/5xx); runAgent then tries another Flash model.
+class Busy extends Error{}
+const BUSY_MESSAGE='The AI planner is busy right now. Please try again in a moment, or use the manual planner below.';
+
+// Other Flash models this API key can call, newest first (used only if the primary is overloaded).
+async function fallbackModels(c:AgentConfig,primary:string,fetcher:Fetcher){
+ const r=await fetcher('https://generativelanguage.googleapis.com/v1beta/models?pageSize=200',{headers:{'x-goog-api-key':c.GEMINI_API_KEY!},signal:AbortSignal.timeout(10000)});
+ if(!r.ok)return [];
+ const list=(await r.json() as any).models;
+ if(!Array.isArray(list))return [];
+ return list.flatMap((m:any)=>{
+  const id=/^models\/(gemini-(\d+(?:\.\d+)?)-flash(-lite)?)$/.exec(m?.name||'');
+  return id&&m.supportedGenerationMethods?.includes('generateContent')&&id[1]!==primary?[{id:id[1],version:parseFloat(id[2]),lite:!!id[3]}]:[];
+ }).sort((a:any,b:any)=>b.version-a.version||Number(a.lite)-Number(b.lite)).map((m:any)=>m.id).slice(0,2) as string[];
+}
+
 export async function runAgent(request:string,plan:Plan,local:Data,reports:Report[],c:AgentConfig,fetcher:Fetcher=fetch){
  if(!c.GEMINI_API_KEY)throw Error('The AI planner is not connected yet. The manual planner remains available.');
- const model=c.GEMINI_MODEL||'gemini-3.6-flash';
- if(!/^[a-zA-Z0-9._-]+$/.test(model))throw Error('Invalid Gemini model setting.');
+ const primary=c.GEMINI_MODEL||'gemini-3.6-flash';
+ if(!/^[a-zA-Z0-9._-]+$/.test(primary))throw Error('Invalid Gemini model setting.');
+ const models=[primary];
+ for(let i=0;i<models.length;i++){
+  try{return await runWithModel(models[i],request,plan,local,reports,c,fetcher);}
+  catch(e){
+   if(!(e instanceof Busy))throw e;
+   if(i===0)models.push(...await fallbackModels(c,primary,fetcher).catch(()=>[]));
+   if(i===models.length-1)throw Error(BUSY_MESSAGE);
+  }
+ }
+ throw Error(BUSY_MESSAGE);
+}
+
+async function runWithModel(model:string,request:string,plan:Plan,local:Data,reports:Report[],c:AgentConfig,fetcher:Fetcher){
+ // Gemini intermittently answers 429/5xx under load; retry once before switching models.
  const call=async(body:unknown)=>{
-  const r=await fetcher(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,{method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':c.GEMINI_API_KEY!},body:JSON.stringify(body),signal:AbortSignal.timeout(30000)});
-  if(!r.ok)throw Error(`Gemini request failed (${r.status}). Check API access and quota.`);
-  return r.json() as Promise<any>;
+  let status=0;
+  for(let attempt=0;attempt<2;attempt++){
+   if(attempt)await new Promise(r=>setTimeout(r,400));
+   const r=await fetcher(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,{method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':c.GEMINI_API_KEY!},body:JSON.stringify(body),signal:AbortSignal.timeout(30000)});
+   if(r.ok)return r.json() as Promise<any>;
+   status=r.status;
+   if(![429,500,502,503,504].includes(status))break;
+  }
+  console.error(`Gemini ${model} request failed (${status})`);
+  if([429,500,502,503,504].includes(status))throw new Busy(BUSY_MESSAGE);
+  throw Error('The AI planner is temporarily unavailable. Please use the manual planner below.');
  };
  const declarations=[{name:'find_campus_options',description:'Find real campus destinations, using available Databricks data and time constraints. Call before recommending any destination.',parameters:{type:'OBJECT',properties:{intent:{type:'STRING',enum:['study','quiet','group','eat','break']},maxWalk:{type:'INTEGER',description:'Maximum walking minutes per leg, 2 to 20'}},required:['intent','maxWalk']}}];
  const contents:any[]=[{role:'user',parts:[{text:JSON.stringify({request,currentPlan:plan})}]}];
@@ -46,7 +84,7 @@ export async function runAgent(request:string,plan:Plan,local:Data,reports:Repor
  const evidence=results.slice(0,5).map(s=>({id:s.id,name:s.name,usableMinutes:s.usable,walkIn:s.walkIn,walkOut:s.walkOut,leave:s.leave,classChange:s.crowd.label,seats:s.latest?.level||'No recent report',publishedHours:s.open,source:s.source}));
  if(!evidence.length)return {plan:candidate,selectedId:null,explanation:'No destinations fit those constraints. Try a longer gap or a larger walking limit.',source:campus.source,evidence,trace:['Gemini called find_campus_options',`Read ${campus.source}`,'Validated walking, hours and next-class deadline'],model};
  contents.push(modelContent,{role:'user',parts:[{functionResponse:{name:'find_campus_options',response:{source:campus.source,options:evidence}}}]});
- const final=await call({systemInstruction:{parts:[{text:'Choose one of the returned option IDs and explain why in at most 70 words. Use only supplied evidence. Do not invent amenities, opening hours, seat counts, probabilities or walk times. Return JSON with selectedId and explanation.'}]},contents,generationConfig:{responseMimeType:'application/json',responseSchema:{type:'OBJECT',properties:{selectedId:{type:'STRING',enum:evidence.map(x=>x.id)},explanation:{type:'STRING'}},required:['selectedId','explanation']}}});
+ const final=await call({systemInstruction:{parts:[{text:'Choose one of the returned option IDs and explain why in at most 70 words. Refer to the place by its name, never by its ID. Use only supplied evidence. Do not invent amenities, opening hours, seat counts, probabilities or walk times. Return JSON with selectedId and explanation.'}]},contents,generationConfig:{responseMimeType:'application/json',responseSchema:{type:'OBJECT',properties:{selectedId:{type:'STRING',enum:evidence.map(x=>x.id)},explanation:{type:'STRING'}},required:['selectedId','explanation']}}});
  let answer;try{answer=JSON.parse(final.candidates?.[0]?.content?.parts?.filter((p:any)=>p.text).map((p:any)=>p.text).join('')||'');}catch{throw Error('The AI response could not be read. Please retry.');}
  if(!evidence.some(s=>s.id===answer.selectedId)||typeof answer.explanation!=='string')throw Error('The AI recommended an unverified destination. Please retry.');
  return {plan:candidate,selectedId:answer.selectedId,explanation:answer.explanation.slice(0,1500),source:campus.source,evidence,trace:['Gemini called find_campus_options',`Read ${campus.source}`,'Validated walking, hours and next-class deadline','Gemini compared verified options'],model};

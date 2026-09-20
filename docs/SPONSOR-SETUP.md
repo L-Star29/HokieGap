@@ -5,7 +5,8 @@
 - MLH categories: optional, no category limit; choose only integrations actually demonstrated.
 - VTHacks categories: choose at least one. Consider Best First-Time Hack if every applicable eligibility condition is met, and Ut Prosim for student usefulness.
 - Sponsor challenges: up to three. Intended: Deloitte x Databricks ("AI Agent for the Virginia Tech Student Experience": smart campus / campus life hub) and Cloudforce ("HokieAI Side Kick": a standalone HokieAI experience plus a post). Gemini is MLH and does not consume a sponsor slot.
-- Third sponsor slot: GoDaddy is the only realistic fit. Its "Best Domain Name" track (code `MLH0918VTH`) needs only a custom domain pointed at the deployed app (see DEPLOY.md), and the same registry offer is an MLH category that costs no sponsor slot. Its other track, "Best Use of ANS" (agents discovering each other over the open web), is a real build; do not select it without implementing it. Capital One (Nessie banking API), Impiricus (healthcare-professional engagement), Peraton (mission-critical AI) and Procedura (photo to 3D building) do not fit HokieGap. Leaving the slot empty is better than a claim the demo cannot support.
+- Third sponsor slot: leave it empty. On Devpost the GoDaddy sponsor challenge is "Best Use of ANS" (agents discovering each other over the open web), a real build HokieGap does not have. The custom-domain prize, "Best Domain Name from GoDaddy Registry" (code `MLH0918VTH`), is an MLH category and costs no sponsor slot: select it under MLH (hokiegap.club). Capital One (Nessie banking API), Impiricus (healthcare-professional engagement), Peraton (mission-critical AI) and Procedura (photo to 3D building) do not fit HokieGap. Leaving the slot empty is better than a claim the demo cannot support.
+- MLH categories to select (no limit): Best Use of Gemini API and Best Domain Name from GoDaddy Registry. Do not select ElevenLabs, Solana, Tiger Data, Presage, Vultr or MongoDB Atlas: HokieGap does not use them.
 
 ## Gemini: server-side API
 
@@ -13,7 +14,7 @@ The project ID/number is not an API credential. In Google AI Studio, import the 
 
 The application invokes Gemini function calling to select activity/walk preferences, executes `find_campus_options`, validates timing with the planner, then asks Gemini to select and explain an option from the returned IDs. It rejects invented destinations. Without Databricks credentials, evidence is explicitly labeled `Bundled campus snapshot`. It is not a trained occupancy model.
 
-Run `node --env-file=.dev.vars scripts/check-agent.mjs` for a real, synthetic-example smoke test. Public AI requests have a global limit of 20 per hour (up to two model requests per plan). Configure a provider-side budget as appropriate. The host must also receive secrets (`npx wrangler secret put GEMINI_API_KEY`; see DEPLOY.md); local `.dev.vars` does not configure hosted production. `npm run check:agent` runs the same smoke test.
+Run `node --env-file=.dev.vars scripts/check-agent.mjs` for a real, synthetic-example smoke test. Public AI requests have a global limit of 60 per hour (up to two model requests per plan). If the configured model is overloaded, the agent retries once and then falls back to the newest other plain Flash model the key can call. Configure a provider-side budget as appropriate. The host must also receive secrets (`npx wrangler secret put GEMINI_API_KEY`; see DEPLOY.md); local `.dev.vars` does not configure hosted production. `npm run check:agent` runs the same smoke test.
 
 ## Deloitte + Databricks
 

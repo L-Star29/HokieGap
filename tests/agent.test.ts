@@ -24,5 +24,27 @@ test('Databricks host must be an https *.cloud.databricks.com workspace',async()
  for(const host of ['https://evil.example.com','http://example.cloud.databricks.com','https://user:pw@example.cloud.databricks.com'])
   await assert.rejects(loadCampus({DATABRICKS_HOST:host,DATABRICKS_TOKEN:'t',DATABRICKS_WAREHOUSE_ID:'w'},data,fake as any),/Invalid Databricks workspace host/);
 });
+test('transient Gemini 503 is retried and then succeeds',async()=>{
+ let count=0;
+ const fake=async()=>{count++;if(count===1)return new Response('{}',{status:503});
+  return Response.json(count===2?{candidates:[{content:{role:'model',parts:[{functionCall:{name:'find_campus_options',args:{intent:'eat',maxWalk:8}}}]}}]}:{candidates:[{content:{parts:[{text:JSON.stringify({selectedId:'perry-place',explanation:'ok'})}]}}]});};
+ const r=await runAgent('food',plan,data,[],{GEMINI_API_KEY:'test'},fake as any);
+ assert.equal(r.selectedId,'perry-place');assert.equal(count,3);
+});
+test('overloaded primary model falls back to another plain Flash model the key can use',async()=>{
+ const seen:string[]=[];let n=0;
+ const ok=(m:string)=>({name:`models/${m}`,supportedGenerationMethods:['generateContent']});
+ const fake=async(url:any)=>{const u=String(url);seen.push(u);
+  if(u.includes('/models?'))return Response.json({models:[ok('gemini-3.6-flash'),ok('gemini-2.5-flash-image'),ok('gemini-2.5-pro'),ok('gemini-2.5-flash')]});
+  if(u.includes('gemini-3.6-flash:generateContent'))return new Response('{}',{status:503});
+  return Response.json(++n===1?{candidates:[{content:{role:'model',parts:[{functionCall:{name:'find_campus_options',args:{intent:'eat',maxWalk:8}}}]}}]}:{candidates:[{content:{parts:[{text:JSON.stringify({selectedId:'perry-place',explanation:'ok'})}]}}]});};
+ const r=await runAgent('food',plan,data,[],{GEMINI_API_KEY:'test'},fake as any);
+ assert.equal(r.model,'gemini-2.5-flash');
+ assert.ok(seen.filter(u=>u.includes(':generateContent')).every(u=>/gemini-(3\.6|2\.5)-flash:generateContent/.test(u)));
+});
+test('persistent Gemini failure gives a friendly message, not API details',async()=>{
+ const fake=async()=>new Response('{}',{status:503});
+ await assert.rejects(runAgent('food',plan,data,[],{GEMINI_API_KEY:'test'},fake as any),(e:Error)=>/busy right now/.test(e.message)&&!/503|quota|API/.test(e.message));
+});
 test('agent refuses invented destination IDs even when Gemini returns them',async()=>{let count=0;const fake=async()=>Response.json(++count===1?{candidates:[{content:{role:'model',parts:[{functionCall:{name:'find_campus_options',args:{intent:'eat',maxWalk:8}}}]}}]}:{candidates:[{content:{parts:[{text:JSON.stringify({selectedId:'imaginary-place',explanation:'Invented'})}]}}]});await assert.rejects(runAgent('food',plan,data,[],{GEMINI_API_KEY:'test'},fake),/unverified destination/);});
 test('agent rejects tool arguments outside valid walking constraints',async()=>{const fake=async()=>Response.json({candidates:[{content:{parts:[{functionCall:{name:'find_campus_options',args:{intent:'eat',maxWalk:500}}}]}}]});await assert.rejects(runAgent('food',plan,data,[],{GEMINI_API_KEY:'test'},fake),/invalid preferences/);});

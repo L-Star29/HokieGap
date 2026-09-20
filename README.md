@@ -1,5 +1,7 @@
 # HokieGap
 
+Live: https://hokiegap.club (also https://hokiegap.hokiegap.workers.dev)
+
 A working Virginia Tech gap planner: find a study or break space between two classes, compare usable time and class-change pressure, select a backup, and report visible seating conditions.
 
 Start with [Team setup](docs/TEAM-START.md), [Deploy](docs/DEPLOY.md), [Sponsor setup](docs/SPONSOR-SETUP.md), and [Devpost draft](docs/DEVPOST-DRAFT.md).
@@ -20,7 +22,7 @@ HokieGap's current demand model is not yet a trained ML model, occupancy sensor 
 
 The forecast window is deliberately limited to Sept 19–25, 2026. Extending it requires checking the academic calendar, actual class meeting dates, cancellations and updated timetables. Forecasts do not run outside this window. Saturday/Sunday are interpreted using the published meeting-day codes. This is partial coverage of 14 subjects, not every class or event on campus. Timetable continuation rows are not yet imported. Shared room/time rows are conservatively deduplicated by maximum listed capacity.
 
-Gemini tool-calling is implemented and has passed a real API and browser smoke test with gemini-3.6-flash. The Databricks SQL integration and setup notebook are implemented but not yet verified in the team workspace (`npm run check:databricks` verifies it). The HokieAI Side Kick prompt is prepared; it still needs creation/testing inside HokieAI and the required social post. See docs/SPONSOR-SETUP.md. No API keys are needed for the manual planner.
+Gemini tool-calling is implemented and verified live (default gemini-3.6-flash, automatic fallback to another Flash model when overloaded). The Databricks SQL integration is verified against the team workspace (`npm run check:databricks`; live AI requests report `Databricks SQL warehouse`). The HokieAI Side Kick prompt is prepared; it still needs creation/testing inside HokieAI and the required social post. See docs/SPONSOR-SETUP.md. No API keys are needed for the manual planner.
 
 The owner approved public access to the hosted app. Anonymous report rate limiting is basic, not fraud-proof. A public launch needs abuse controls and report-quality evaluation. Preferences, favorite places, saved gaps and a current plan are stored on the device. When a student chooses Plan with AI, the request and selected gap details are sent to Gemini. A random browser session identifier is stored with reports but never returned publicly. Old observations are cleaned up on subsequent writes after seven days; there is no background retention job.
 

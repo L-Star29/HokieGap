@@ -6,6 +6,16 @@
   "compatibility_date": "2026-05-22",
   "compatibility_flags": ["nodejs_compat"],
 
+  // Keep the workers.dev address live as a fallback while/if the custom domain is unavailable.
+  "workers_dev": true,
+
+  // Custom domain (registered via the GoDaddy Registry offer, DNS on Cloudflare).
+  // Cloudflare creates the DNS records and certificate on deploy.
+  "routes": [
+    { "pattern": "hokiegap.club", "custom_domain": true },
+    { "pattern": "www.hokiegap.club", "custom_domain": true }
+  ],
+
   // Seating reports + the AI hourly request budget. Create it once with
   //   npx wrangler d1 create hokiegap-db
   // then paste the printed database_id below. IDs are not secrets.
